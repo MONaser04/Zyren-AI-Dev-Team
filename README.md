@@ -2,6 +2,8 @@
 
 **Autonomous Multi-Agent Software Engineering Collective powered by NVIDIA NeMo & Gemini Live (Generation 2)**
 
+[![Project Status: Suspended / Archived](https://www.repostatus.org/badges/latest/suspended.svg)](https://www.repostatus.org/#suspended)
+[![Superseded by ZyrenClaw](https://img.shields.io/badge/Superseded%20by-ZyrenClaw-blue.svg)](https://github.com/MONaser04/ZyrenClaw)
 [![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/release/python-3110/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![NVIDIA NIM](https://img.shields.io/badge/NVIDIA-NIM%20Endpoints-76B900.svg)](https://www.nvidia.com/en-us/ai-data-science/products/nim/)
@@ -9,6 +11,10 @@
 [![Gemini Live](https://img.shields.io/badge/Gemini-Live%20Multimodal%20API-4285F4.svg)](https://ai.google.dev/)
 [![Code Style: Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
 [![Type Checking: MyPy Strict](https://img.shields.io/badge/mypy-strict-brightgreen.svg)](https://mypy-lang.org/)
+
+> [!IMPORTANT]
+> **Project Status: Archived & Superseded by ŽyrenClaw (Generation 3)**
+> Active development on this repository is paused and preserved in read-only archive mode. This codebase represents **Generation 2** of the Žyren architecture (the fully implemented Dual-Brain Voice/Reasoning Liaison Agent and 6-agent target blueprint). All active autonomous software development workflows have evolved into the lightweight, 5-agent vertical hub-and-spoke production architecture at [**MONaser04/ZyrenClaw**](https://github.com/MONaser04/ZyrenClaw).
 
 ---
 
