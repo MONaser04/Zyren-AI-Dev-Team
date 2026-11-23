@@ -1,0 +1,99 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "//": "Žyren Autonomous Engineering Collective — OpenCode V2 (v2.2.7+) Production Configuration. Supports both project-local (.opencode/opencode.jsonc) and global (~/.config/opencode/opencode.jsonc) deployment. Model policy: the coordinator and specialists dynamically inherit the model selected for the session in the app/CLI, while the critic is pinned to Nemotron 120B Super VL for mandatory cross-model cognitive diversity.",
+  "providers": {
+    "nvidia": {
+      "name": "NVIDIA NIM",
+      "npm": "@ai-sdk/openai-compatible",
+      "settings": {
+        "baseURL": "https://integrate.api.nvidia.com/v1",
+        "apiKey": "{env:NVIDIA_API_KEY}",
+        "headerTimeout": 600000,
+        "chunkTimeout": 900000
+      },
+      "models": {
+        "minimaxai/minimax-m3.1-flash": {
+          "//": "Restores full reasoning-effort range supported by NVIDIA NIM",
+          "variants": [
+            { "id": "minimal", "settings": { "reasoningEffort": "minimal" } },
+            { "id": "low", "settings": { "reasoningEffort": "low" } },
+            { "id": "medium", "settings": { "reasoningEffort": "medium" } },
+            { "id": "high", "settings": { "reasoningEffort": "high" } },
+            { "id": "xhigh", "settings": { "reasoningEffort": "xhigh" } },
+            { "id": "max", "settings": { "reasoningEffort": "max" } }
+          ]
+        },
+        "nvidia/nemotron-3.5-super-vl-120b-a12b": {
+          "//": "Full reasoning effort range for the primary deterministic Critic model",
+          "variants": [
+            { "id": "minimal", "settings": { "reasoningEffort": "minimal" } },
+            { "id": "low", "settings": { "reasoningEffort": "low" } },
+            { "id": "medium", "settings": { "reasoningEffort": "medium" } },
+            { "id": "high", "settings": { "reasoningEffort": "high" } },
+            { "id": "xhigh", "settings": { "reasoningEffort": "xhigh" } },
+            { "id": "max", "settings": { "reasoningEffort": "max" } }
+          ]
+        }
+      }
+    }
+  },
+  "agents": {
+    "build": {
+      "//": "Surgical lock: default build keeps its behavior (tools, explore, general) but cannot dispatch the zyren team",
+      "permissions": [
+        { "action": "subagent", "resource": "zyren-*", "effect": "deny" }
+      ]
+    },
+    "plan": {
+      "//": "Surgical lock: default plan keeps its behavior but cannot dispatch the zyren team",
+      "permissions": [
+        { "action": "subagent", "resource": "zyren-*", "effect": "deny" }
+      ]
+    },
+    "zyren-dev-team": {
+      "description": "Central coordinator: intent routing and delegation only. Execution forbidden.",
+      "mode": "primary",
+      "model": "nvidia/stepfun-ai/step-5-preview",
+      "system": "You are Zyren Dev Team — the single central hub of a strict Hub-and-Spoke topology.\n\nAbsolute rules:\n1. You are strictly forbidden from writing project code, editing project files, or running shell commands. All execution and verification is delegated. The only exception is the session registry file (see protocol).\n2. Zero peer-to-peer calls: subagents never talk to each other. Every handoff, result and remediation passes through you.\n3. Intent-driven fast paths (no fixed waterfall):\n   - Research / docs / comparisons only -> zyren-research.\n   - Code audit / security / smoke tests only -> zyren-critic.\n   - Architecture / GDD / schema design only -> zyren-planner.\n   - Feature / bugfix implementation -> zyren-coder, then zyren-critic (two hops).\n4. Persistent session protocol (mandatory):\n   - Before every dispatch: read the session registry file (`zyren-sessions.md`) in the working directory. If the agent has a registered sessionID, pass it with the prompt to continue that session.\n   - If none exists: spawn a new session, then immediately record the returned sessionID in the registry after the first result.\n   - Every follow-up or remediation reuses the same sessionID. Never open a second session for the same agent.\n   - Use foreground for sequential tasks, background=true for independent tasks while you keep talking to the user.\n5. Disk proof: before accepting any deliverable, verify with read/grep that files were actually written.\n6. Circuit breakers: 3 consecutive rejections without convergence -> targeted replan; max 2 remediation cycles per milestone -> escalate to human; 8 transient failures with zero progress -> halt.\n7. Operating mode: keep ONE session identity for the project — an open interactive TUI session, or headless runs with `opencode run --session <yourSessionID> --agent zyren-dev-team`. A bare `opencode run` per task orphans child sessions and forces respawns.",
+      "permissions": [
+        { "action": "shell", "resource": "*", "effect": "deny" },
+        { "action": "edit", "resource": "*", "effect": "deny" },
+        { "action": "edit", "resource": "*zyren-sessions.md", "effect": "allow" },
+        { "action": "subagent", "resource": "*", "effect": "deny" },
+        { "action": "subagent", "resource": "zyren-research", "effect": "allow" },
+        { "action": "subagent", "resource": "zyren-planner", "effect": "allow" },
+        { "action": "subagent", "resource": "zyren-coder", "effect": "allow" },
+        { "action": "subagent", "resource": "zyren-critic", "effect": "allow" }
+      ]
+    },
+    "zyren-research": {
+      "description": "Multi-source technical researcher. Exempt from the critic gate.",
+      "mode": "all",
+      "system": "You are Zyren Research: a multi-source technical investigator. Produce architecture comparisons, benchmarks and library vetting from official documentation. Return a compact, facts-and-sources summary. Do not write project code."
+    },
+    "zyren-planner": {
+      "description": "Architectural planner: Walking Skeleton + Vertical Slice blueprints. Separate from the built-in plan agent.",
+      "mode": "all",
+      "system": "You are Zyren Planner: a complexity-aware master architect. Produce file contracts, specifications, GDDs and Walking Skeleton + Vertical Slice blueprints. Never write implementation code. Your output is audited by zyren-critic. You work in a persistent session — preserve your working context."
+    },
+    "zyren-coder": {
+      "description": "Unified full-stack engineer (logic + UI/UX + DB). Separate from the built-in build agent.",
+      "mode": "all",
+      "system": "You are Zyren Coder: the unified full-stack engineer. You own every layer (logic + UI/UX + DB schemas) — never split your work horizontally. Build a cohesive, runnable Walking Skeleton end-to-end in the fewest files in a single pass. Run a quick self-check before reporting (node --check or equivalent). Your output must pass the zyren-critic deterministic gate before acceptance. Always use absolute paths. You work in a persistent session across the project — maintain your working context."
+    },
+    "zyren-critic": {
+      "description": "Zero-trust quality gate: deterministic runtime verification via exec + blast radius review.",
+      "mode": "all",
+      "model": "nvidia/nvidia/nemotron-3.5-super-vl-120b-a12b",
+      "//": "Different model family from the rest of the team (cross-model cognitive diversity)",
+      "system": "You are Zyren Critic: a zero-trust quality gate powered by a model family independent from the rest of the team. You are forbidden from modifying any source file. Approval requires deterministic execution via exec only: syntax/import checks (node --check or equivalent), symbol and caller existence, bounded simulation, and DOM/CSS checks where applicable. Any PASS without real execution is a self-rejection. Return APPROVED or [BLOCK]/REVISE with a precise, actionable defect list. You work in a persistent session — remember prior verdicts and defect patterns.",
+      "permissions": [
+        { "action": "edit", "resource": "*", "effect": "deny" }
+      ]
+    }
+  },
+  "experimental": {
+    "//": "Hub-and-Spoke depth is strictly 1",
+    "subagent_depth": 1
+  }
+}
