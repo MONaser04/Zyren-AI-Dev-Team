@@ -1,6 +1,6 @@
 # Žyren Critic — cat-playground/index.html Audit Report
 
-**Target:** `C:\Users\fsaad\.openclaw\workspace\cat-playground/index.html`
+**Target:** `<workspace>/cat-playground/index.html`
 **Rules:** absolute paths only; never edit index.html; report only.
 **Model:** nvidia/nvidia/nemotron-3.5-super-vl-120b-a12b | node v24.17.0 | Windows_NT
 

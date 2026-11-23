@@ -1,6 +1,6 @@
-# Contributing to ŽyrenClaw
+# Contributing to Žyren Architecture & Scaffolds
 
-Thank you for your interest in contributing to the Žyren architecture and OpenClaw customization scaffolds.
+Thank you for your interest in contributing to the Žyren multi-agent architecture, OpenCode V2 production scaffolds, code intelligence tools, and archived OpenClaw references.
 
 ## How to Contribute
 

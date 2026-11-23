@@ -1,13 +1,13 @@
 # Žyren Critic — Audit Report: Fruit Catcher farm-background visibility fix
-**Project (target root):** D:\PROJECTS\FRUITS
-**Audited files:** D:\PROJECTS\FRUITS\index.html, D:\PROJECTS\FRUITS\style.css, D:\PROJECTS\FRUITS\game.js
+**Project (target root):** <workspace>/modern-fruit-catcher
+**Audited files:** <workspace>/modern-fruit-catcher/index.html, <workspace>/modern-fruit-catcher/style.css, <workspace>/modern-fruit-catcher/game.js
 **Verdict:** [PASS] / APPROVED — no defects found
 **Method:** Per AGENTS.md §3, no [PASS] was issued on static reading alone. Every runtime-critical claim was executed via `exec` in a deterministic Node.js simulation (VM + stubbed DOM, Web Audio API, and localStorage). Static reads were used only for structural cross-references. No project files were modified.
 
 ---
 
 ## 1. Syntax — PASS
-`node --check D:\PROJECTS\FRUITS\game.js` → exit 0.
+`node --check <workspace>/modern-fruit-catcher/game.js` → exit 0.
 
 ## 2. Cross-called method existence — PASS
 Every bare function call in game.js resolves to a function defined in game.js, a JS global, or a browser/DOM API. Zero undefined calls. Defined: advanceLevel, catchFruit, draw, endGame, ensureAudio, explode, getCanvasMouseX, initAmbient, levelComplete, loadBest, loop, loseLife, missFruit, pickKindForLevel, playTone, rand, resize, saveBest, setScreen, shadeParticleColor, showFloat, spawnFruit, startGame, startShake, togglePause, update, updateHUD (plus loadBest/saveBest/ensureAudio/playTone/startShake/startGame/resize/initAmbient).
@@ -62,4 +62,4 @@ None.
 3. The level-complete check at game.js:~575 runs on the fruit iteration following a threshold-crossing catch/miss — a bounded one-iteration deferral, harmless under continuous spawning.
 
 ---
-Report written to D:\PROJECTS\FRUITS\audit-report.md. No project source files were altered.
+Report written to <workspace>/modern-fruit-catcher/audit-report.md. No project source files were altered.

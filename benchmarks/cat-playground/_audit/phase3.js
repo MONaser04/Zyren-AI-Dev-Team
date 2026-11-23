@@ -1,9 +1,10 @@
 'use strict';
 const fs = require('fs');
+const path = require('path');
 const https = require('https');
-const targetDir = 'C:\\Users\\fsaad\\.openclaw\\workspace\\cat-playground\\_audit';
-const cannonPath = targetDir + '\\cannon.min.js';
-const report = targetDir + '\\REPORT.md';
+const targetDir = __dirname;
+const cannonPath = path.join(targetDir, 'cannon.min.js');
+const report = path.join(targetDir, 'REPORT.md');
 const results = [];
 function check(name, cond, detail) {
   const pass = !!cond;

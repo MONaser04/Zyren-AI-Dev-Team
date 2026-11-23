@@ -1,6 +1,6 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "//": "Žyren Autonomous Engineering Collective — OpenCode V2 (v2.2.7+) Production Configuration. Supports both project-local (.opencode/opencode.jsonc) and global (~/.config/opencode/opencode.jsonc) deployment. Model policy: the coordinator and specialists dynamically inherit the model selected for the session in the app/CLI, while the critic is pinned to Nemotron 120B Super VL for mandatory cross-model cognitive diversity.",
+  "//": "Žyren Autonomous Engineering Collective — OpenCode V2 (v2.2.7+) Production Configuration. Supports both project-local (.opencode/opencode.jsonc) and global (~/.config/opencode/opencode.jsonc) deployment. Model policy: the coordinator defaults to nvidia/stepfun-ai/step-5-preview (overridable in session), the three specialists (research, planner, coder) carry no pinned model and dynamically inherit the active session model, and the critic stays pinned to nvidia/nvidia/nemotron-3.5-super-vl-120b-a12b for mandatory cross-model cognitive diversity.",
   "providers": {
     "nvidia": {
       "name": "NVIDIA NIM",

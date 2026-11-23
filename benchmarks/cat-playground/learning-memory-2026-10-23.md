@@ -1,6 +1,6 @@
 # 2026-10-23 — Cuddly / Cats. 3D Landing Page
 
-**Project:** `C:\Users\fsaad\.openclaw\workspace\cat-playground\index.html` (834 lines, single file)
+**Project:** `<workspace>/cat-playground/index.html` (834 lines, single file)
 Owner request: interactive 3D landing page — Three.js r128 + Cannon.js 0.6.2 via UMD script tags, procedural kawaii cats, squash-spring physics, raycaster grab/toss, glassmorphism panel with pastel palette + gravity/bounciness sliders + "Pour more cats".
 
 **Flow:** zyren-coder built (700 lines) → zyren-critic first audit stalled in a heavy Node-sim harness (infra stall, no verdict) → my disk audit caught 3 defects → surgical fix dispatch to a fresh zyren-coder session with literal anchor edits → slim priority-ordered critic gate → APPROVED.

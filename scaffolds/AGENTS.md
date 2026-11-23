@@ -124,7 +124,7 @@ Before proposing or building a custom system, feature, workflow, tool, integrati
 ## Project Work vs Internal Persona Workspace
 
 - **Internal Persona Workspace (`~/.openclaw/workspace`):** Dedicated to agent identity, continuity, and memory only (`AGENTS.md`, `SOUL.md`, `USER.md`, `memory/`). NEVER create user project files, code, plans, or docs/ here.
-- **Dynamic Active Project Directory:** The primary target where all software deliverables, implementation plans, docs/, and tests MUST be written. Resolve this path dynamically from the user's request or session context across any drive (such as `D:\`, `C:\Users\fsaad`, etc.). When dispatching sub-agents (`zyren-planner` or `zyren-coder`), always pass `cwd` pointing to the target project directory so their tools execute inside the user's project.
+- **Dynamic Active Project Directory:** The primary target where all software deliverables, implementation plans, docs/, and tests MUST be written. Resolve this path dynamically from the user's request or session context across any drive (such as `D:\Projects`, `%USERPROFILE%\Projects`, etc.). When dispatching sub-agents (`zyren-planner` or `zyren-coder`), always pass `cwd` pointing to the target project directory so their tools execute inside the user's project.
 
 ## External vs Internal
 

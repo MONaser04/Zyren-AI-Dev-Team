@@ -1,7 +1,8 @@
 'use strict';
 const fs = require('fs');
-const target = 'C:\\Users\\fsaad\\.openclaw\\workspace\\cat-playground\\index.html';
-const report = 'C:\\Users\\fsaad\\.openclaw\\workspace\\cat-playground\\_audit\\REPORT.md';
+const path = require('path');
+const target = path.resolve(__dirname, '..', 'index.html');
+const report = path.join(__dirname, 'REPORT.md');
 const html = fs.readFileSync(target, 'utf8');
 const results = [];
 function check(name, cond, detail) {

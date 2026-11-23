@@ -18,7 +18,7 @@ scaffolds/
 ├── tools/                       # 💎 Code Intelligence Engine (Cross-Platform CLI)
 │   ├── code_outline.py          # Zero-dependency AST outline engine (96.2% token savings)
 │   ├── code_graph.py            # Static cross-file caller and blast radius gate
-│   └── code_search.py           # Two-stage semantic code search (Gemini Embed 2 + Nemotron Rerank)
+│   └── code_search.py           # Two-stage semantic code search (NVIDIA Nemotron-3.5-Embed-8B + Nemotron-3.5-Rerank-8B)
 │
 ├── openclaw.example.json        # ⚙️ Generation 3 & 4: OpenClaw / ŽyrenClaw Collective Config
 ├── AGENTS.md                    # Generation 4: OpenClaw v4.0 Specification & Soul
@@ -33,6 +33,6 @@ scaffolds/
 
 ## Active Generation Guidance
 
-- **For New Deployments (Recommended):** Use [`scaffolds/opencode/`](file:///D:/PROJECTS/ZYREN_CASE_STUDY/scaffolds/opencode/README.md). It represents the state-of-the-art **Generation 5** autonomous coding runtime, delivering 100% execution fidelity, progressive skill disclosure, and zero daemon collapses on OpenCode V2.
+- **For New Deployments (Recommended):** Use [`scaffolds/opencode/`](./opencode/README.md). It represents the state-of-the-art **Generation 5** autonomous coding runtime, delivering high instruction adherence, progressive skill disclosure, and stable background service execution on OpenCode V2.
 - **For OpenClaw Environments:** Refer to `openclaw.example.json` and root `AGENTS.md` for the historical **Generation 3/4** gateway baseline.
-- **For Tooling:** The scripts in [`tools/`](file:///D:/PROJECTS/ZYREN_CASE_STUDY/scaffolds/tools) are runtime-agnostic Python utilities compatible with both OpenCode and OpenClaw environments.
+- **For Tooling:** The scripts in [`tools/`](./tools/) are runtime-agnostic Python utilities compatible with both OpenCode and OpenClaw environments.

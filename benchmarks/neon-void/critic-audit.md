@@ -1,6 +1,6 @@
 # NEON VOID — Žyren Critic Quality Gate Audit Report
 
-**Project:** D:\Games\Games_Projects\neon-void (index.html, style.css, game.js)
+**Project:** <workspace>/neon-void (index.html, style.css, game.js)
 **Runtime:** node v24.17.0, Windows_NT, PowerShell
 **Gate:** zero-trust deterministic runtime smoke test (no text-only approvals)
 **Date:** 2026-10-23
@@ -112,4 +112,4 @@ Undefined in style.css: `.final-stats` (used at index.html:47 `<div class="final
 
 **REVISE** — BLOCKER-1 prevents the game from running; the render loop never starts. Fix BLOCKER-1 and MINOR-2/MINOR-3, then re-submit to the Coordinator Hub for `zyren-coder` remediation dispatch.
 
-No project source files were modified by this gate; all checks executed headlessly via `exec` against the absolute target files. Temp harness was written to and removed from D:\Games\Games_Projects\.smoke (outside the project folder).
+No project source files were modified by this gate; all checks executed headlessly via `exec` against the absolute target files. Temp harness was written to and removed from <workspace>/.smoke (outside the project folder).

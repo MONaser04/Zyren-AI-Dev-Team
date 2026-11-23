@@ -1,11 +1,11 @@
 # Žyren Critic Audit Report — Fruit Catcher Brightness & Farm Background Verification
 
-**Project:** D:\PROJECTS\FRUITS  
+**Project:** <workspace>/modern-fruit-catcher  
 **Auditor:** zyren-critic (Universal Quality Gate / Deterministic Runtime Verifier)  
 **Session:** agent:zyren-critic:subagent:864ff383-3fe3-4023-85b7-b0128999cc3a  
 **Date:** 2026-10-18  
 **Runtime:** node v24.17.0 (Windows_NT 10.0.26200 x64)  
-**Target files (absolute paths):** D:\PROJECTS\FRUITS\index.html, D:\PROJECTS\FRUITS\style.css, D:\PROJECTS\FRUITS\game.js
+**Target files (absolute paths):** <workspace>/modern-fruit-catcher/index.html, <workspace>/modern-fruit-catcher/style.css, <workspace>/modern-fruit-catcher/game.js
 
 ---
 
@@ -21,7 +21,7 @@ All required checks pass. **Zero defects found.** Both reported issues are resol
 
 Per the Critic mandate, no `[PASS]` is issued on text-only inspection. Verification performed:
 
-1. `node --check D:\PROJECTS\FRUITS\game.js` → exit code 0 (executed via `exec`).
+1. `node --check <workspace>/modern-fruit-catcher/game.js` → exit code 0 (executed via `exec`).
 2. Programmatic cross-reference: all 24 `document.getElementById` call sites in game.js vs. all `id=` attributes in index.html (24/24 match).
 3. Programmatic function-existence audit: all functions called in game.js are declared in game.js; all 22 required game functions declared.
 4. Static re-audit of owner requirements: brightness CSS values, farm CSS, canvas sizing, DOM structure, dt math, combo/multiplier, localStorage, pause guard, shake decay, screens, HUD, Web Audio, emoji fruits, etc.
@@ -35,7 +35,7 @@ Note: headless-browser `file://` loading is blocked by OpenClaw browser policy; 
 ## Check-by-Check Results
 
 ### 1. Syntax — PASS
-`node --check D:\PROJECTS\FRUITS/game.js` → exit code 0.
+`node --check <workspace>/modern-fruit-catcher/game.js` → exit code 0.
 
 ### 2. Cross-Called Method Existence — PASS
 All functions called in game.js are declared in game.js (0 undeclared after stripping comments/string literals; keywords excluded).
@@ -118,4 +118,4 @@ All deterministic runtime checks pass: syntax, cross-method existence, DOM ID cr
 
 **Verdict: [PASS] / APPROVED. No remediation required.**
 
-*Report written to D:\PROJECTS\FRUITS\critic-audit-report.md (absolute path; no source-code files were modified.)*
+*Report written to <workspace>/modern-fruit-catcher/critic-audit-report.md (absolute path; no source-code files were modified.)*

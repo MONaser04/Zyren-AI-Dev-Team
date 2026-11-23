@@ -28,3 +28,6 @@ node_modules/
 *.sqlite-wal
 *.sqlite-shm
 *.lock
+
+# Personal notes and local scratch drafts
+note/

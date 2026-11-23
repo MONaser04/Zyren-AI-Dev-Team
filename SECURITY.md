@@ -4,8 +4,9 @@
 
 | Version | Supported          |
 | ------- | ------------------ |
-| 3.x     | :white_check_mark: |
-| < 3.0   | :x:                |
+| 5.x (OpenCode V2 Scaffolds) | :white_check_mark: |
+| 4.x (Legacy OpenClaw Reference) | :warning: Maintenance only |
+| < 4.0   | :x:                |
 
 ## Reporting a Vulnerability
 
