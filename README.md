@@ -2,6 +2,13 @@
   <img src="assets/zyren-logo.png" alt="Žyren Engineering Brand" width="180" />
 </p>
 
+<p align="center">
+  <img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License: MIT" />
+  <img src="https://img.shields.io/badge/Runtime-OpenCode%20V2%20(v2.2.7)-10b981.svg" alt="Runtime: OpenCode V2" />
+  <img src="https://img.shields.io/badge/Python-3.11%2B-3776ab.svg" alt="Python 3.11+" />
+  <img src="https://img.shields.io/badge/Topology-5--Agent%20Hub--and--Spoke-8b5cf6.svg" alt="Topology: 5-Agent Hub-and-Spoke" />
+</p>
+
 # Engineering Autonomous Multi-Agent Software Swarms: Lessons from Five Architectural Generations
 
 **An Empirical Case Study on Swarm Topology, Coordination Overhead, Horizontal vs. Vertical Decomposition, Deterministic Runtime Verification, and The OpenCode V2 Harness Migration**
@@ -40,13 +47,13 @@ This case study documents the complete architectural evolution of autonomous sof
 | :--- | :--- | :--- | :--- | :--- |
 | 🏛️ **Gen 1: The Bespoke SDLC Monolith** | **20 Agent Roles** (17 SDLC + 3 Ops) in a LangGraph Star Topology | • Built from scratch in **19,597 LOC Python**<br>• Custom SmartGateway with Thompson Sampling<br>• 29 offline mock test suites | ❌ **Coordination Tax & Context Loss:** Passing context across 17 specialist boundaries caused >30% semantic drift and massive token burn. | 📦 **Status:** [Zyren-AI-Dev-Team-I](https://github.com/MONaser04/Zyren-AI-Dev-Team-I)<br>*(✅ Completed & Archived)* |
 | 🧠 **Gen 2: NVIDIA NeMo & Dual-Brain** | **Consolidated 2-Tier Hierarchy** (<50MB RAM local footprint) | • Native **NVIDIA NIM & AI Workbench** integration<br>• Dual-Brain: Gemini Live Voice Facade + Nemotron 550B Ultra Reasoning | ⚠️ **Plumbing vs. Runtime:** Proved high-speed voice and dual-tier routing, but lacked a unified native agent CLI runtime. | 📦 **Status:** [Zyren-NeMo-Chassis](https://github.com/MONaser04/Zyren-NeMo-Chassis) & [Zyren-AI-Dev-Team](https://github.com/MONaser04/Zyren-AI-Dev-Team)<br>*(✅ Completed & Archived)* |
-| ⚙️ **Gen 3: Forging ŽyrenClaw** | **Decoupled Upstream Wrapper (Zero-Fork Runtime)** + **LangClaw** State Sidecar | • Decoupled UI & CLI branding (`zyrenclaw.cmd`)<br>• **100% upstream update immunity**<br>• SQLite episodic vector memory | ❌ **Horizontal Layer Trap:** Splitting frontend, backend, and DB across separate agents caused DOM ID and API schema mismatches. | 🔄 **Status:** [MONaser04/ZyrenClaw](https://github.com/MONaser04/ZyrenClaw)<br>*(📦 Archived Gen 3/4 Baseline — `scaffolds/openclaw.example.json`)* |
+| ⚙️ **Gen 3: Forging ŽyrenClaw** | **Decoupled Upstream Wrapper (Zero-Fork Runtime)** + **LangClaw** State Sidecar | • Decoupled UI & CLI branding (`zyrenclaw.cmd`)<br>• **100% upstream update immunity**<br>• SQLite episodic vector memory | ❌ **Horizontal Layer Trap:** Splitting frontend, backend, and DB across separate agents caused DOM ID and API schema mismatches. | 🔄 **Status:** [MONaser04/ZyrenClaw](https://github.com/MONaser04/ZyrenClaw)<br>*(📦 Archived Gen 3/4 Baseline — `scaffolds/openclaw/openclaw.example.json`)* |
 | 🚀 **Gen 4: Lean 5-Agent Topology** | **Strict Hub-and-Spoke** (Coordinator, Researcher, Planner, Coder, Critic) | • **Vertical Feature Slicing (Walking Skeletons)**<br>• **Deterministic Runtime Smoke Gate (`exec`)**<br>• Conway-aligned Full-Stack Coder | ✅ **Eliminated Frankenstein Code:** 3/3 autonomous canary deliveries (`modern-fruit-catcher`, `cat-playground`, `neon-void`) via closed-loop Critic self-repair, including a 15-min unguided sprint delivery (10,515 playtest score). | 🎯 **Status:** `benchmarks/` (`modern-fruit-catcher/`, `cat-playground/`, `neon-void/`)<br>*(✅ Production Verified)* |
-| 👑 **Gen 5: The OpenCode V2 Migration (Frontier Harness)** | **OpenCode V2 (v2.2.7) 5-Agent Port** (`scaffolds/opencode/`) | • Native TypeScript background daemon (`opencode serve`) + Electron Desktop<br>• First-Class **Agent Skills Standard** (`SKILL.md`) with Progressive Disclosure<br>• Persistent Session Protocol (`zyren-sessions.md`) | ✅ **Eliminated Gateway Collapses & Context Dilution:** Replaced fragile Node.js daemon plumbing, SQLite lock contentions, and chat-injection dilution in OpenClaw with native, zero-stall desktop harness execution, verified zero-orphan session continuity, and autonomous Python CLI delivery (`task-cli`). | 🚀 **Status:** `scaffolds/opencode/` (`opencode.example.jsonc`, `AGENTS.md`, `commands/`)<br>*(✅ Active Production Runtime — Preliminary Canary Validated)* |
+| 👑 **Gen 5: The OpenCode V2 Migration (Frontier Harness)** | **OpenCode V2 (v2.2.7) 5-Agent Port** (`scaffolds/opencode/`) | • Native TypeScript background daemon (`opencode serve`) + Electron Desktop<br>• First-Class **Agent Skills Standard** (`SKILL.md`) with Progressive Disclosure<br>• Persistent Session Protocol (`zyren-sessions.md`) | ✅ **Eliminated Gateway Collapses & Context Dilution:** Replaced fragile Node.js daemon plumbing, SQLite lock contentions, and chat-injection dilution in OpenClaw with native, zero-stall desktop harness execution, verified zero-orphan session continuity, and autonomous Python CLI delivery (`task-cli`). | 🚀 **Status:** [`scaffolds/opencode/`](scaffolds/opencode/README.md) & [`benchmarks/task-cli/`](benchmarks/task-cli/README.md)<br>*(✅ Active Production Runtime — Preliminary Canary Validated)* |
 | ⚡ **Gen 4 Stress Experiment: 10-Hour Endurance Test** | **Long-Horizon Multi-Hour Autonomous Build** (`grand-project`) | • **10-Hour Elevated Session** (`timeoutSeconds: 36000`)<br>• **State-Anchored Protocol** (`PROGRESS.md` on disk against Compaction Cliff)<br>• **5.52GB Free RAM** allocated<br>• Full-scale 3D WebGL ecosystem (10–12 stages, modular core, procedural audio/shaders) | ⚠️ **Exposed Daemon Contention:** Long-horizon endurance runs validated state-anchored `PROGRESS.md` persistence and RAM governance, while exposing OpenClaw daemon fragility that motivated the Gen 5 pivot to OpenCode V2. | 📦 **Status:** Local stress experiment (not bundled in repo)<br>*(📦 Archived Gen 4 Experiment)* |
 | 💎 **Track 1: Code Intelligence Engine** | **AST + Call-Graph + NVIDIA Nemotron Embed & Rerank** | • `code-outline`: AST sight (**96.2% token savings**)<br>• `code-graph`: **Mandatory Blast Radius Gate** on Critic<br>• `code-search`: Two-stage **NVIDIA Nemotron-3.5-Embed-8B & Nemotron-3.5-Rerank-8B** | ✅ **Eliminated Context Exhaustion & Breaking Changes:** Tools built, unit-benchmarked, and globally deployed. | 🛠️ **Status:** `scaffolds/tools/` (`code-outline`, `code-graph`, `code-search`)<br>*(✅ Built & Verified)* |
 | 🧠 **Universal Distributed Memory & Self-Learning** | **Decentralized Capture (`DecentMem`/`DeLM`) + 3072D Vector Index (`gemini-embedding-2`)** | • Upgraded to **Google Gemini Embedding 2** (3072 dims, 8192-token context, CoIR 84.0 retrieval SOTA, verified 578ms query latency) via native cross-platform vector indexing<br>• Hybrid search (0.7 vector + 0.3 BM25) + MMR (λ=0.7)<br>• Role-specific autonomous memory logging (`critic-rules.md`, `dev-gotchas.md`, `research-patterns.md`, `architecture-contracts.md`) | ✅ **Closed-Loop Autonomous Self-Learning:** Verified zero-trust defect interception and permanent heuristic distillation into durable gotchas. | 🎯 **Status:** `benchmarks/cat-playground/`<br>*(✅ 100% Production Verified & Empirically Validated)* |
-| 🛡️ **Production Unattended Reliability & Resource Optimization** | **Two-Strike Write-First Contract + Circuit Breaker + WSL2/RAM Governance** | • **Two-Strike Autonomous Retry Budget** combating "Phantom Completion" (Zero Nocturnal Stalls)<br>• Reclaimed **3.6+ GB Host RAM** (WSL2 `autoMemoryReclaim=gradual` + `sparseVhd` + Edge App Mode)<br>• Cross-project memory isolation & zero-trust disk-proof verification | ✅ **Eliminated Nocturnal Stalls & Resource Exhaustion:** Production-verified across multi-hour marathon runs, reclaiming 24% total system RAM. | 🚀 **Status:** Codified in `scaffolds/AGENTS.md` & `scaffolds/opencode/AGENTS.md` (Two-Strike & Circuit Breakers carried into Gen 5)<br>*(✅ Production Verified)* |
+| 🛡️ **Production Unattended Reliability & Resource Optimization** | **Two-Strike Write-First Contract + Circuit Breaker + WSL2/RAM Governance** | • **Two-Strike Autonomous Retry Budget** combating "Phantom Completion" (Zero Nocturnal Stalls)<br>• Reclaimed **3.6+ GB Host RAM** (WSL2 `autoMemoryReclaim=gradual` + `sparseVhd` + Edge App Mode)<br>• Cross-project memory isolation & zero-trust disk-proof verification | ✅ **Eliminated Nocturnal Stalls & Resource Exhaustion:** Production-verified across multi-hour marathon runs, reclaiming 24% total system RAM. | 🚀 **Status:** Codified in `scaffolds/openclaw/AGENTS.md` & `scaffolds/opencode/AGENTS.md` (Two-Strike & Circuit Breakers carried into Gen 5)<br>*(✅ Production Verified)* |
 | 🔭 **Microsoft UFO OS Automation** *(Standby)* | **Native Windows GUI & Desktop Control** | • Microsoft UFO bridge (`live_ufo_bridge.py`)<br>• UI Automation (UIA) tree control & Vision-Language | ⏳ **Strategic Standby:** Architecture complete; tactically frozen awaiting desktop vision spatial grounding maturity. | ⏸️ **Status:** `projects/ufo-automation/`<br>*(⏸️ Architected & Placed on Standby)* |
 
 ---
@@ -85,6 +92,29 @@ This case study documents the complete architectural evolution of autonomous sof
 
 ---
 
+### Repository Structure & Quick Start
+
+| Path | Role | Highlights |
+|---|---|---|
+| [`scaffolds/opencode/`](scaffolds/opencode/README.md) | **Gen 5 Production Runtime (OpenCode V2)** | `opencode.example.jsonc`, persistent session `AGENTS.md`, and `/build`, `/audit`, `/plan`, `/research` fast-paths |
+| [`scaffolds/tools/`](scaffolds/tools/README.md) | **Code Intelligence Engine (Python CLI)** | `code_outline.py` (AST, 96.2% token savings), `code_graph.py` (`--impact` blast radius), `code_search.py` (NVIDIA Nemotron Embed & Rerank) |
+| [`scaffolds/openclaw/`](scaffolds/openclaw/README.md) | **Gen 3/4 OpenClaw Reference (Archived)** | `openclaw.example.json`, legacy `AGENTS.md`, `SOUL.md`, `CRITIC_SOUL.md`, and gateway scripts |
+| [`benchmarks/task-cli/`](benchmarks/task-cli/README.md) | **Gen 5 Flagship CLI Benchmark** | Zero-dependency Python CLI built autonomously on OpenCode V2 + [`DESIGN.md`](benchmarks/task-cli/DESIGN.md) + [`SESSION_TRACE.md`](benchmarks/task-cli/SESSION_TRACE.md) |
+| [`benchmarks/`](benchmarks/README.md) | **Full Empirical Benchmarks & Audits** | Gen 4 WebGL/Canvas2D microcosms (`modern-fruit-catcher`, `cat-playground`, `neon-void`) + Critic audit reports |
+
+#### 60-Second Quick Start
+
+```powershell
+# 1. Run the Gen 5 autonomous CLI benchmark built by the OpenCode V2 collective
+$env:PYTHONPATH = "benchmarks/task-cli"
+python -m taskcli --help
+
+# 2. Deploy the OpenCode V2 5-agent collective (copy into project .opencode/ or ~/.config/opencode/)
+# See scaffolds/opencode/README.md for global & project-local setup instructions
+```
+
+---
+
 ### Quick Navigation Index
 - [1. Generation 1: Building a 20-Agent SDLC Engine from First Principles](#1-generation-1-building-a-20-agent-sdlc-engine-from-first-principles)
 - [2. Generation 2: The NVIDIA NeMo Ecosystem & The First Consolidation](#2-generation-2-the-nvidia-nemo-ecosystem--the-first-consolidation)
@@ -93,9 +123,10 @@ This case study documents the complete architectural evolution of autonomous sof
   - [4.3 Engineering Anti-Fragility: Circuit Breakers, Polyglot AST, & Cognitive Model Tiering](#43-engineering-anti-fragility-circuit-breakers-polyglot-ast--cognitive-model-tiering)
 - [5. The Two Game-Changing Breakthroughs: LangClaw & Vertical Slicing](#5-the-two-game-changing-breakthroughs-langclaw--vertical-slicing)
 - [6. Empirical Validation & Cross-Generational Benchmarking](#6-empirical-validation--cross-generational-benchmarking)
-- [7. Current Progress & Future Architectural Roadmap](#7-current-progress--future-architectural-roadmap)
-  - [7.5 The Strategic Harness Pivot: Migrating to OpenCode V2 (v2.2.x) as the Frontier Coding Engine](#75-the-strategic-harness-pivot-migrating-to-opencode-v2-v22x-as-the-frontier-coding-engine)
-- [8. Citation & Attribution](#8-citation--attribution)
+- [7. Generation 5: The Strategic Harness Pivot to OpenCode V2 (v2.2.x)](#7-generation-5-the-strategic-harness-pivot-to-opencode-v2-v22x)
+  - [7.5 Empirical Validation: Autonomous End-to-End Delivery of `task-cli`](#75-empirical-validation-autonomous-end-to-end-delivery-of-task-cli)
+- [8. Engineering Subsystems & Future Architectural Roadmap](#8-engineering-subsystems--future-architectural-roadmap)
+- [9. Citation & Attribution](#9-citation--attribution)
 
 ---
 
@@ -253,7 +284,7 @@ While in the early stages of expanding `Zyren-AI-Dev-Team` toward its 6-agent ta
 
 > [!NOTE]
 > **Historical Context (Gen 3/4 Decision Rationale → Gen 5 Evolution):**  
-> This section records why adopting an unmodified Agent Gateway runtime (OpenClaw) in Generation 3/4 was vastly superior to reinventing custom FastAPI/Celery plumbing from scratch. Later production stress-testing (detailed in Section 7.5.2) revealed OpenClaw's automation-vs-coding category mismatch and daemon fragility, motivating the Generation 5 migration to **OpenCode V2**—which preserves this exact gateway-infrastructure separation natively for software engineering.
+> This section records why adopting an unmodified Agent Gateway runtime (OpenClaw) in Generation 3/4 was vastly superior to reinventing custom FastAPI/Celery plumbing from scratch. Later production stress-testing (detailed in [Section 7.2](#72-operational-analysis-why-openclaw-failed-as-a-production-coding-harness)) revealed OpenClaw's automation-vs-coding category mismatch and daemon fragility, motivating the Generation 5 migration to **OpenCode V2**—which preserves this exact gateway-infrastructure separation natively for software engineering.
 
 A common superficial critique when evaluating autonomous coding collectives is:  
 > *"Why use an Agent Gateway runtime like OpenClaw instead of building directly with lightweight Python frameworks like PydanticAI, LangGraph, or raw FastAPI + Async Workers? Doesn't an external gateway introduce IPC plumbing and fork maintenance overhead?"*
@@ -325,7 +356,7 @@ flowchart TD
 > **Dynamic Intent-Driven Point-to-Point Routing vs. The Static Waterfall Fallacy:**  
 > A critical misconception when analyzing a 5-agent collective is assuming a monolithic, sequential 8-hop waterfall where every task must visit every agent in fixed serial order:  
 > `User ➔ Hub ➔ Research ➔ Hub ➔ Planner ➔ Hub ➔ Coder ➔ Hub ➔ Critic ➔ Hub ➔ User` (which would introduce 8 sequential network round-trips and 2–4 minutes of latency).  
-> **ŽyrenClaw completely rejects this waterfall trap.** As formalized in `scaffolds/AGENTS.md` and grounded in latency-aware multi-agent systems research (*LAMaS*, arXiv:2601.10560; *Towards a Science of Scaling Agent Systems*, Kim et al., arXiv:2512.08296; and orchestration-pattern benchmarking in arXiv:2603.22651), the Hub executes **Dynamic Intent-Driven Direct Routing** where **each specialist has its own direct point-to-point fast-path based on the user's exact intent**:
+> **ŽyrenClaw completely rejects this waterfall trap.** As formalized in `scaffolds/openclaw/AGENTS.md` (and carried into `scaffolds/opencode/AGENTS.md`) and grounded in latency-aware multi-agent systems research (*LAMaS*, arXiv:2601.10560; *Towards a Science of Scaling Agent Systems*, Kim et al., arXiv:2512.08296; and orchestration-pattern benchmarking in arXiv:2603.22651), the Hub executes **Dynamic Intent-Driven Direct Routing** where **each specialist has its own direct point-to-point fast-path based on the user's exact intent**:
 > * **Zero-Hop Direct Conversation (0 ms background overhead):** Conceptual queries, explanations, clarifications, and brainstorming stay entirely inside `zyren-dev-team` without spawning background subagents.
 > * **Direct Research Fast-Path (1 Subagent Hop):** When the request is strictly informational, comparative, or diagnostic (e.g., *"Compare SQLite vector extensions"* or *"Research API deprecations"*), the Hub dispatches **only** `zyren-research`. Zero code or planning hops are executed.
 > * **Direct Code Review & Audit Fast-Path (1 Subagent Hop):** When the request is to audit existing code, run security checks, or execute smoke tests (e.g., *"Audit auth.js for memory leaks"*), the Hub dispatches **only** `zyren-critic` to run its 4-point deterministic verification suite directly without invoking Coder or Planner.
@@ -348,7 +379,7 @@ To guarantee production stability and prevent the common failure modes of open-s
 
 #### 1. Deadlock Circuit Breakers & Anti-Ping-Pong Protocol
 A classic trap in multi-agent Coder-Critic dynamics is the **Infinite Ping-Pong Loop**—where the Critic continually rejects code, triggering endless rework cycles that exhaust token budgets and API credits in minutes.  
-**ŽyrenClaw enforces strict, deterministic Circuit Breakers** across `scaffolds/AGENTS.md` and `SOUL.md`:
+**ŽyrenClaw enforces strict, deterministic Circuit Breakers** across `scaffolds/openclaw/AGENTS.md` and `SOUL.md`:
 * **The 3-Strike Deadlock Protocol:** If `zyren-critic` rejects deliverables 3 consecutive times with zero convergence, the system trips an automatic circuit breaker and triggers `langclaw_replan_deadlock` to author a targeted delta recovery plan without wiping existing codebase progress.
 * **Hard 2-Cycle Milestone Escalation Gate:** The Coordinator enforces a strict maximum of **2 remediation cycles per milestone**. If an architectural or logic defect cannot be resolved within 2 iterations, the swarm automatically halts and escalates directly to **Human-in-the-Loop (HITL)** supervision, preventing runaway API spend.
 * **Transient 8-Streak Circuit Breaker:** When cloud APIs experience network drops (`503/504` or dropped sockets), the system sends automated `"Continue!"` pulses, but strictly caps zero-progress retries at 8 consecutive streaks (any forward progress resets the counter).
@@ -371,7 +402,7 @@ A critical flaw in naive multi-agent architectures is using the exact same model
 
 #### 4. The Two-Strike Write-First Contract Protocol (Combating "Phantom Completion")
 A critical failure mode identified in autonomous software engineering swarms (and prominently observed in real-world SWE-bench evaluations) is **"Phantom Completion"**: an agent successfully generates hundreds or thousands of lines of functional code within its conversational context, yet exhausts its context window or completes its turn before invoking the physical `write` tool call to commit the deliverable to disk.
-To permanently eliminate nocturnal stalls and silent unwritten deliverables, **ŽyrenClaw enforces the Two-Strike Autonomous Retry Budget** in `scaffolds/AGENTS.md`:
+To permanently eliminate nocturnal stalls and silent unwritten deliverables, **ŽyrenClaw enforces the Two-Strike Autonomous Retry Budget** in `scaffolds/openclaw/AGENTS.md`:
 * **Strike 1 (Immediate Same-Session Remediation):** If the Coordinator or `zyren-critic` detects that a planned deliverable file is physically absent from disk upon subagent completion, the Coordinator immediately dispatches a high-priority assertion prompt into the *existing* active session via `sessions_send`:
   `"CRITICAL DELIVERABLE MISSING: Target file <path> was not written to disk. You MUST execute the 'write' tool immediately to save the full implementation file before any other action."`
 * **Strike 2 (Clean-Context Fallback Spawn with Write-First Contract):** If Strike 1 fails, times out, or encounters context saturation, the Coordinator spawns a replacement session via `sessions_spawn` bound by a rigid **Write-First Contract**:
@@ -397,7 +428,7 @@ Because native OpenClaw isolates agent sessions by default, early multi-step bui
 
 > [!NOTE]
 > **Architectural Consolidation (Gen 3 Prototype ➔ Gen 4 Native Production):**  
-> While LangClaw served as the initial sandbox to prototype vector retrieval (Generation 3 prototype evaluated legacy 1536D embeddings), **Generation 4 completely eliminated external sidecar IPC**. In production ŽyrenClaw, the memory substrate was promoted to **OpenClaw Native Memory**, initially unifying on NVIDIA Nemotron 768D MRL vectors and subsequently upgraded to **Google Gemini Embedding 2 (3072D)** natively inside OpenClaw's core gateway runtime (detailed in Section 7.2).
+> While LangClaw served as the initial sandbox to prototype vector retrieval (Generation 3 prototype evaluated legacy 1536D embeddings), **Generation 4 completely eliminated external sidecar IPC**. In production ŽyrenClaw, the memory substrate was promoted to **OpenClaw Native Memory**, initially unifying on NVIDIA Nemotron 768D MRL vectors and subsequently upgraded to **Google Gemini Embedding 2 (3072D)** natively inside OpenClaw's core gateway runtime (detailed in [Section 8.2](#82-universal-distributed-memory--autonomous-self-learning-engine-completed--empirically-validated)).
 
 1. **Real-Time Mesh Milestone Checkpointing (`langclaw_engine`):**
    - Whenever `zyren-dev-team` initiates a project or spawns a branch, it synchronously commits state via `langclaw_engine__langclaw_memory_upsert` (`PROJECT_STATE`, `BRANCH_TASK_<ID>`, `MILESTONE_<FILE>`), and queries active state via `langclaw_engine__langclaw_memory_search`.
@@ -445,7 +476,7 @@ While interactive games and WebGL applications may initially appear distinct fro
    - **Phase 3 (Bounded Runtime Smoke Execution):** Bounded simulation of state transitions and logic loops, avoiding heavy infinite harnesses.
 
 3. **Scope & Roadmap Delineation (Canary Microcosms vs. SWE-bench):**  
-   These canary benchmarks prove that the 5-agent swarm can autonomously deliver cohesive, runnable, multi-system applications from scratch with zero human intervention. As detailed in [Section 7.4](#74-upcoming-milestones-distributed-systems--swe-bench-benchmarking), formal evaluation across existing multi-file enterprise codebases using **SWE-bench Verified** represents the next planned milestone on our architectural roadmap.
+   These canary benchmarks prove that the 5-agent swarm can autonomously deliver cohesive, runnable, multi-system applications from scratch with zero human intervention. As detailed in [Section 8.4](#84-upcoming-milestones-distributed-systems--swe-bench-benchmarking), formal evaluation across existing multi-file enterprise codebases using **SWE-bench Verified** represents the next planned milestone on our architectural roadmap.
 
 ### 6.2 Cross-Generational Architectural & Operational Benchmark Matrix
 
@@ -456,7 +487,7 @@ The following matrix contrasts the empirical performance, architectural topology
 | **Active Agent Roster** | 17 SDLC Roles + 3 Operational Roles (20 total) | 2 Unified Core Roles (Voice Facade + Reasoning Core) | **5 Agents** (1 Coordinator Hub + 4 Leaf Specialists) | **5 Agents** (1 Hub + 4 Leaf Specialists, isolated `zyren-*` IDs) |
 | **Orchestration Topology** | Supervisor Star Topology with Parallel DAG Fan-Out / Fan-In | Asynchronous Dual-Brain Switchyard Router | **Strict Hub-and-Spoke** (Zero Peer-to-Peer Mesh) | **Strict Hub-and-Spoke** (`subagent_depth: 1`, zero peer-to-peer) |
 | **Decomposition Strategy** | Horizontal Layer Splitting (PRD → Arch → Coder/UX/DB) | Micro-Kernel Tool Dispatch | **Vertical Feature Slicing** (Cohesive Walking Skeletons) | **Vertical Feature Slicing** + Intent Fast-Path Commands (`/build`, `/audit`, `/plan`, `/research`) |
-| **Context & Token Overhead** | O(N²) message cascades; >30% semantic degradation across handoffs | Audio stream buffers; bounded single-turn sliding window | **O(N) Hub-and-Spoke**; in-process RRF vector (768D Nemotron MRL → upgraded to 3072D Gemini Embedding 2 in §7.2) / FTS5 memory (<5MB RAM) with pre-compaction flushing | **O(N) Hub-and-Spoke**; Progressive Skill Disclosure (`SKILL.md` tool) + automatic compaction |
+| **Context & Token Overhead** | O(N²) message cascades; >30% semantic degradation across handoffs | Audio stream buffers; bounded single-turn sliding window | **O(N) Hub-and-Spoke**; in-process RRF vector (768D Nemotron MRL → upgraded to 3072D Gemini Embedding 2 in §8.2) / FTS5 memory (<5MB RAM) with pre-compaction flushing | **O(N) Hub-and-Spoke**; Progressive Skill Disclosure (`SKILL.md` tool) + automatic compaction |
 | **Turnaround Latency Profile** | High Latency (multi-stage sequential deliberation, DAG fan-out synchronization, review bottlenecks) | Low Latency (real-time voice streaming with decoupled execution) | **Rapid Turnaround** (single-pass cohesive slice with immediate in-process verification) | **Rapid Turnaround** (decoupled TypeScript `opencode serve` + persistent child sessions) |
 | **First-Run Code Execution** | Highly Prone to Failure (frequent link-class bugs, broken module imports, desynchronized DOM IDs) | N/A (Infrastructure chassis & voice prototype) | **Consistently Runnable** (verified runnable Walking Skeleton validated at runtime by Critic) | **Preliminary Canary Verified** (`task-cli`, N=1 CLI build + closed-loop Critic remediation) |
 | **Local Infrastructure Footprint** | 1.5GB – 2.5GB RAM (Docker Compose: Postgres, Qdrant, LiteLLM, Jaeger) | <50MB RAM (SQLite WAL, token bucket limiters, AI Workbench) | **<150MB RAM total** (Native Node.js Gateway + embedded `sqlite-vec` sidecar; <5MB for memory store) | **Native Desktop / CLI Runtime** (Electron + `opencode-cli`, zero manual Node gateway scripts) |
@@ -528,9 +559,63 @@ The true test of **ŽyrenClaw** occurred during live human playtesting, where na
 
 ---
 
-## 7. Current Progress & Future Architectural Roadmap
+## 7. Generation 5: The Strategic Harness Pivot to OpenCode V2 (v2.2.x)
 
-### 7.1 Track 1 Milestone: The Deterministic Code Intelligence Engine (Completed Implementation)
+### 7.1 The Principle of Harness Agnosticism (Agent = Model + Topology, Independent of Runtime Locks)
+A core philosophical pillar established across the Žyren engineering journey is **Harness Agnosticism**: a production autonomous swarm is defined by its cognitive topology, decomposition discipline, and deterministic quality gates—**not by dogmatic adherence to a single execution harness**. 
+* **The Evolution of the Harness Substrate:** The swarm has iteratively migrated across runtime environments as clearer engineering paradigms emerged:
+  1. *Bespoke Monolith (Python/LangGraph monorepo, 19,597 LOC)* → Proved routing and state, but incurred unsustainable orchestration maintenance.
+  2. *NVIDIA NeMo Chassis & AI Workbench* → Solved hardware-constrained resource footprints (<50MB RAM), but lacked a unified native agent CLI runtime.
+  3. *OpenClaw Gateway / ŽyrenClaw* → Provided an initial persistent background daemon, but exposed structural category mismatches and operational fragility.
+  4. *OpenCode V2 (v2.2.7+)* → **The definitive frontier coding harness**, purpose-built natively for interactive software engineering.
+* **Abstract Portability:** Because the Žyren 5-Agent Hub-and-Spoke collective is formalized as an abstract architectural contract in `AGENTS.md` (governed by Vertical Feature Slicing, Conway-aligned Full-Stack coding, and Deterministic Runtime Gates), the collective can be seamlessly transplanted into any superior harness substrate without rewriting core business logic.
+
+### 7.2 Operational Analysis: Why OpenClaw Failed as a Production Coding Harness
+While OpenClaw served as a foundational stepping stone for prototyping subagent mechanics, extensive multi-hour operational benchmarking exposed fatal friction points when applied to complex software engineering:
+1. **Category Mismatch (Background Automation vs. Interactive Coding Harness):** OpenClaw was fundamentally engineered as an asynchronous, 24/7 background gateway for multi-channel messaging (Telegram, WhatsApp, Discord) and cron job automations. Forcing it into the role of a high-velocity, interactive coding agent harness required maintaining layers of fragile ad-hoc plumbing (`ensure-gateway.js`, `sqlite-self-heal.js`, custom PowerShell daemon loops).
+2. **Runtime Fragility & SQLite Lock Contention:** Continuous multi-agent execution frequently triggered unhandled Node.js process crashes, dropped WebSockets, and recurring SQLite file-lock contentions (`SQLITE_BUSY` / `SQLITE_LOCKED`). Clearing stale locks required repetitive manual intervention, violating the core requirement of zero-interruption autonomous engineering.
+3. **Context Dilution via Unbounded Skill Injection:** OpenClaw injected global skill manuals and system instructions directly into the primary prompt context at turn zero. In frontier LLMs, this massive prompt bloat induced severe **Attention Dilution**, degrading the model's reasoning capacity and leading to instruction-drift on complex multi-turn tasks.
+
+### 7.3 Why OpenCode V2 (v2.2.x) Dominates the Autonomous Harness Landscape
+Evaluated in November 2026, **OpenCode V2** (engineered by Anomaly, `@thdxr`) represents a quantum leap in autonomous coding infrastructure:
+1. **Purpose-Built Coding Architecture:** OpenCode was designed from first principles strictly for software development. Its core runtime operates as a high-performance background daemon (`opencode serve`) cleanly decoupled from user interfaces (Electron Desktop, terminal TUI, and headless CLI) via the open Agent Client Protocol (ACP).
+2. **Zero-Plumbing Native Desktop Integration:** Completely replaces fragile background Node.js gateway scripts with a standalone desktop client (`OpenCode.exe`) and bundled CLI (`opencode-cli.exe`), launching instantaneously with zero runtime drift.
+3. **The First-Class Agent Skills Standard (`SKILL.md`) & Progressive Disclosure:** Rather than flooding the context window, OpenCode registers skills dynamically via a native `skill` tool call. Only concise triggers are indexed at startup; full operational workflows and deep reference documents (`references/`) are retrieved **on-demand (Progressive Disclosure)** only when the task requires them, minimizing baseline context bloat and preserving active reasoning bandwidth.
+4. **Deep Intrinsic Self-Awareness (`opencode` Skill):** OpenCode exposes native self-documentation to the model. The agents possess an exact, introspective understanding of their own CLI options, configuration schemas (`opencode.jsonc`), permission boundaries (`allow` / `deny`), and tool mechanics—yielding significantly higher instruction adherence and deterministic tool-calling fidelity.
+5. **Self-Extensibility & 24/7 Autonomy:** While presenting an elegant, minimalist user interface, OpenCode is intrinsically self-extensible. Autonomous agents can scaffold complex external frameworks (such as installing and orchestrating LangGraph workflows) and sustain continuous, multi-hour background session queues (`subagent_depth: 1`) without crashing.
+
+### 7.4 Architecture of the Port: The ŽyrenClaw → OpenCode V2 Implementation (`scaffolds/opencode/`)
+The production port was architected as an isolated, modular scaffold inside [`scaffolds/opencode/`](scaffolds/opencode/README.md) (deployable per-project in `.opencode/` or globally in `~/.config/opencode/opencode.jsonc`):
+* **Surgical Isolation & Permission Lockdown (`opencode.jsonc`):**
+  - Leaves OpenCode's default `build` and `plan` agents 100% untouched while applying a surgical permission lock (`{ "action": "subagent", "resource": "zyren-*", "effect": "deny" }`) to prevent default agents from accidentally triggering the Žyren collective.
+  - Enforces strict role boundaries on `zyren-dev-team`: `shell: deny`, `edit: deny` (with a narrow whitelist for `*zyren-sessions.md`), restricting the coordinator purely to high-level intent routing and delegation.
+  - Hard-pins `zyren-critic` to `nvidia/nvidia/nemotron-3.5-super-vl-120b-a12b` for cross-model cognitive diversity, defaults `zyren-dev-team` to `nvidia/stepfun-ai/step-5-preview` (overridable per session), and leaves the three specialists (`zyren-research`, `zyren-planner`, `zyren-coder`) unpinned so they dynamically inherit the active session model.
+  - Expands NVIDIA NIM provider timeouts (`headerTimeout: 600000`, `chunkTimeout: 900000`) to guarantee resilience against peak cloud latency spikes.
+* **The Persistent Session Protocol (`zyren-sessions.md`):**
+  - Resolves OpenCode's native subagent lifecycle constraint ("one agent = one session for the project lifetime").
+  - The coordinator reads `zyren-sessions.md` before every dispatch. Follow-up tasks and remediation cycles are routed directly into the existing child `sessionID`, permanently eliminating "orphaned session" errors (`Session X is not a child of the current session`) and preserving cumulative in-memory context across multi-step milestones.
+* **Intent-Driven Fast-Path Commands (`commands/`):**
+  - `build.md` (`/build`): Direct 1-hop invocation to `zyren-coder` for rapid feature implementation.
+  - `audit.md` (`/audit`): Direct 1-hop invocation to `zyren-critic` for deterministic runtime smoke testing.
+  - `plan.md` (`/plan`): Direct 1-hop invocation to `zyren-planner` for Walking Skeleton blueprints.
+  - `research.md` (`/research`): Direct 1-hop invocation to `zyren-research` for technical documentation vetting.
+
+### 7.5 Empirical Validation: Autonomous End-to-End Delivery of `task-cli`
+On **November 11, 2026**, the Žyren collective on OpenCode V2 was subjected to a rigorous, zero-instruction autonomous software engineering benchmark: designing and implementing a zero-dependency, production-grade Python CLI task manager ([`benchmarks/task-cli/`](benchmarks/task-cli/README.md), documented in [`DESIGN.md`](benchmarks/task-cli/DESIGN.md) and [`SESSION_TRACE.md`](benchmarks/task-cli/SESSION_TRACE.md)):
+1. **Phase 1 — Technical Research (`zyren-research`):** Verified official Python 3.15 standard library specifications (`json`, `argparse`, sub-parser patterns, exit codes, and PyPA `[project.scripts]` packaging standards).
+2. **Phase 2 — Architectural Blueprint (`zyren-planner`):** Authored a comprehensive 616-line design specification (`DESIGN.md`), validated by the coordinator via disk-proof.
+3. **Phase 3 — Cohesive Implementation (`zyren-coder`):** Authored the complete 8-file package (`pyproject.toml`, `.gitignore`, `README.md`, `taskcli/__init__.py`, `__main__.py`, `models.py`, `storage.py`, `cli.py`) in a single cohesive pass, reporting two subtle design trade-offs (D2 ID reuse and D3 importability).
+4. **Phase 4 — Deterministic Quality Gate Interception (`zyren-critic`):** Executed real runtime smoke tests and static contract assertions. The Critic caught an exact documentation discrepancy in `README.md` (lines 91-92 claiming IDs are never reused, contradicting the D2 architectural ruling) and issued a **`REVISE`** verdict.
+5. **Phase 5 — Same-Session Surgical Remediation & Final Approval:** The defect was routed back to `zyren-coder`'s persistent session. The fix was applied in under 60 seconds without collateral changes. `zyren-critic` re-audited the patch and issued **`APPROVED` (0 remaining defects)**.
+6. **Milestone Completion:** The coordinator executed disk-proof verification, confirming 100% operational functionality (`add`, `list`, `done`, `delete`) and zero circular imports.
+
+* **Benchmark Conclusion — Preliminary Validation Scope (N=1 CLI Package):** While a single 8-file Python CLI does not constitute statistical proof across large enterprise repositories (scheduled for formal Track 2 and **SWE-bench Verified** evaluation in [§8.4](#84-upcoming-milestones-distributed-systems--swe-bench-benchmarking)), the unguided delivery of `task-cli` confirmed zero daemon stalls, zero-orphan persistent session reuse, and clean closed-loop Critic remediation—validating OpenCode V2 as the active production harness for the Žyren collective.
+
+---
+
+## 8. Engineering Subsystems & Future Architectural Roadmap
+
+### 8.1 Track 1 Milestone: The Deterministic Code Intelligence Engine (Completed Implementation)
 Following the empirical validation of the Vertical Slicing topology, the collective expanded its code-level exploration and context-compression capabilities through **Track 1 (Code Intelligence & Cross-File Structural Context)**:
 - **AST Outline Engine (`code-outline`):** A zero-dependency AST parser reducing prompt context consumption by **96.2%** (~300 tokens vs. ~8,000 tokens on 700+ line files) while delivering instant structural sight across Python, JavaScript, and TypeScript in under 40ms (`scaffolds/tools/code_outline.py`).
 - **Cross-File Call-Graph & Blast Radius Gate (`code-graph`):** A multi-pass static symbol and reference tracker providing a **fast heuristic blast radius gate on `zyren-critic`** (`scaffolds/tools/code_graph.py`) to statically trace dependencies and catch broken callers prior to Layer 2 runtime execution.
@@ -538,14 +623,14 @@ Following the empirical validation of the Vertical Slicing topology, the collect
 - **Native Gateway Compaction:** Fully integrated with OpenClaw's core gateway auto-compaction and pre-compaction memory flush (`memoryFlush: enabled`), preserving recent operational turns without transcript data loss.
 - **Current Operational Status:** Tool construction, unit benchmarking, and global CLI integration are **100% completed**. Comprehensive end-to-end stress testing within live distributed project generation is queued for the immediate next milestone.
 
-### 7.2 Universal Distributed Memory & Autonomous Self-Learning Engine (Completed & Empirically Validated)
+### 8.2 Universal Distributed Memory & Autonomous Self-Learning Engine (Completed & Empirically Validated)
 Following the completion of the Code Intelligence Engine, the collective addressed the multi-agent memory bottleneck by operationalizing a **Universal Distributed Semantic Memory Substrate** grounded in decentralized multi-agent memory research (**DecentMem**, Hao et al., `arXiv:2605.22721`, which prevents centralized memory collapse via role-private memory pools) while contrasting with fully decentralized task queues such as **DeLM** (Stanford, 2026)—retaining centralized Hub-and-Spoke quality gating while decentralizing memory capture across roles:
 - **Overcoming the Centralized Critic Relay Bottleneck:** Traditional architectures route all learning events through a single agent (the Critic or Coordinator), causing up to 73% loss in developer and researcher micro-learnings (such as local build errors, CSS stacking quirks, or deprecated library APIs that are resolved prior to the final review). ŽyrenClaw decentralizes capture by establishing dedicated, role-specific knowledge bases:
   * `memory/critic-rules.md`: Maintained by `zyren-critic` for verification gotchas, deterministic regression scripts, and post-mortems.
   * `memory/dev-gotchas.md`: Maintained by `zyren-coder` for build, runtime, DOM, CSS, and library quirks.
   * `memory/research-patterns.md`: Maintained by `zyren-research` for library versions, benchmark standards, and verified APIs.
   * `memory/architecture-contracts.md`: Maintained by `zyren-planner` for scale tiers and decomposition rules.
-- **Native 3072-Dimensional Vector Indexing (OpenClaw Memory Search Upgrade — Google Gemini Embedding 2):** Configured OpenClaw's internal memory search (distinct from the standalone `code_search.py` CLI tool in §7.1, which uses Nemotron-3.5-Embed-8B) with **Google Gemini Embedding 2** (`gemini-embedding-2`) at **3072 dimensions** with an expanded **8,192-token context window**, paired with native cross-platform vector indexing in `openclaw.json`. This upgrade expands vector representational capacity by 4x over earlier 768D models and incorporates SOTA code retrieval benchmarks (84.0 on CoIR), allowing entire source code files and extensive memory archives to be indexed without context truncation.
+- **Native 3072-Dimensional Vector Indexing (OpenClaw Memory Search Upgrade — Google Gemini Embedding 2):** Configured OpenClaw's internal memory search (distinct from the standalone `code_search.py` CLI tool in [§8.1](#81-track-1-milestone-the-deterministic-code-intelligence-engine-completed-implementation), which uses Nemotron-3.5-Embed-8B) with **Google Gemini Embedding 2** (`gemini-embedding-2`) at **3072 dimensions** with an expanded **8,192-token context window**, paired with native cross-platform vector indexing in `openclaw.json`. This upgrade expands vector representational capacity by 4x over earlier 768D models and incorporates SOTA code retrieval benchmarks (84.0 on CoIR), allowing entire source code files and extensive memory archives to be indexed without context truncation.
 - **Empirical Latency & Runtime Validation:** The upgraded Gemini 2 embedding engine was benchmarked live under active swarm operation via the internal adapter (`geminiMemoryEmbeddingProviderAdapter`):
   * **Single Code Query Latency:** **578 ms** (full 3072-dimensional vector synthesis).
   * **Memory Chunk Batch Latency:** **432 ms** (full 3072-dimensional vector synthesis).
@@ -567,11 +652,11 @@ Following the completion of the Code Intelligence Engine, the collective address
   * **Deep Sleep (`memory/dreaming/deep/` & Nocturnal Promotion):** Automatically triggered every night at **03:00 AM** (`DEFAULT_MEMORY_DREAMING_FREQUENCY = "0 3 * * *"`) via the managed cron job `Memory Dreaming Promotion`. Deep Sleep evaluates refined candidates against strict promotion thresholds (`minScore`, `maxPromotedSnippetTokens`), permanently etching verified engineering gotchas into `MEMORY.md` and indexing them into the 3072-dimensional vector substrate (`gemini-embedding-2`).
   * **Zero-Shot Heuristic Inheritance:** When the swarm wakes up and initializes a fresh morning build, the subagents automatically query `memory.search` and inherit these distilled operational rules zero-shot—permanently preventing recurring regressions without human oversight.
 
-### 7.3 Native Windows OS & GUI Automation via Microsoft UFO (Architectural Status & Standby)
+### 8.3 Native Windows OS & GUI Automation via Microsoft UFO (Architectural Status & Standby)
 - **Integration Foundation:** The architectural bridge and execution harness (`projects/ufo-automation/` and `live_ufo_bridge.py`) connecting ŽyrenClaw with **Microsoft UFO (UI-Focused Agent)** have been successfully established, enabling Windows UI Automation (UIA) tree parsing and desktop control.
 - **Strategic Standby & Industry Maturation Alignment:** While the communication and orchestration plumbing are fully operational, active deployment of OS-level vision control is currently placed on **tactical architectural standby**. This reflects an intentional engineering decision to await further ecosystem maturity in real-time desktop multimodal spatial grounding models and latency optimizations before exposing full autonomous OS-level mouse and keyboard manipulation to continuous production swarms.
 
-### 7.4 Upcoming Milestones: Distributed Systems & SWE-bench Benchmarking
+### 8.4 Upcoming Milestones: Distributed Systems & SWE-bench Benchmarking
 1. **Escalation to High-Complexity Multi-Service Architectures (Track 2):**
    - Having empirically validated the vertical topology on canary workloads, the swarm will be tasked with end-to-end scaffolding and maintenance of decoupled full-stack systems: an asynchronous FastAPI backend with PostgreSQL and Redis caching, paired with a modern React/TypeScript frontend with real-time WebSockets.
 2. **SWE-bench Verified / Lite Formal Evaluation:**
@@ -579,61 +664,9 @@ Following the completion of the Code Intelligence Engine, the collective address
 
 > [!NOTE]
 > **Milestone Completion Notice:**
-> The original milestone for *Closed-Loop Self-Learning & Heuristic Distillation* (converting Critic `[BLOCK]` events into durable operational rules in `MEMORY.md`) is **100% completed and empirically validated** via the 3D WebGL physics Canary Benchmark documented in [Section 7.2](#72-universal-distributed-memory--autonomous-self-learning-engine-completed--empirically-validated).
+> The original milestone for *Closed-Loop Self-Learning & Heuristic Distillation* (converting Critic `[BLOCK]` events into durable operational rules in `MEMORY.md`) is **100% completed and empirically validated** via the 3D WebGL physics Canary Benchmark documented in [Section 8.2](#82-universal-distributed-memory--autonomous-self-learning-engine-completed--empirically-validated).
 
-### 7.5 The Strategic Harness Pivot: Migrating to OpenCode V2 (v2.2.x) as the Frontier Coding Engine
-
-#### 7.5.1 The Principle of Harness Agnosticism (Agent = Model + Topology, Independent of Runtime Locks)
-A core philosophical pillar established across the Žyren engineering journey is **Harness Agnosticism**: a production autonomous swarm is defined by its cognitive topology, decomposition discipline, and deterministic quality gates—**not by dogmatic adherence to a single execution harness**. 
-* **The Evolution of the Harness Substrate:** The swarm has iteratively migrated across runtime environments as clearer engineering paradigms emerged:
-  1. *Bespoke Monolith (Python/LangGraph monorepo, 19,597 LOC)* → Proved routing and state, but incurred unsustainable orchestration maintenance.
-  2. *NVIDIA NeMo Chassis & AI Workbench* → Solved hardware-constrained resource footprints (<50MB RAM), but lacked a unified native agent CLI runtime.
-  3. *OpenClaw Gateway / ŽyrenClaw* → Provided an initial persistent background daemon, but exposed structural category mismatches and operational fragility.
-  4. *OpenCode V2 (v2.2.7+)* → **The definitive frontier coding harness**, purpose-built natively for interactive software engineering.
-* **Abstract Portability:** Because the Žyren 5-Agent Hub-and-Spoke collective is formalized as an abstract architectural contract in `AGENTS.md` (governed by Vertical Feature Slicing, Conway-aligned Full-Stack coding, and Deterministic Runtime Gates), the collective can be seamlessly transplanted into any superior harness substrate without rewriting core business logic.
-
-#### 7.5.2 Operational Analysis: Why OpenClaw Failed as a Production Coding Harness
-While OpenClaw served as a foundational stepping stone for prototyping subagent mechanics, extensive multi-hour operational benchmarking exposed fatal friction points when applied to complex software engineering:
-1. **Category Mismatch (Background Automation vs. Interactive Coding Harness):** OpenClaw was fundamentally engineered as an asynchronous, 24/7 background gateway for multi-channel messaging (Telegram, WhatsApp, Discord) and cron job automations. Forcing it into the role of a high-velocity, interactive coding agent harness required maintaining layers of fragile ad-hoc plumbing (`ensure-gateway.js`, `sqlite-self-heal.js`, custom PowerShell daemon loops).
-2. **Runtime Fragility & SQLite Lock Contention:** Continuous multi-agent execution frequently triggered unhandled Node.js process crashes, dropped WebSockets, and recurring SQLite file-lock contentions (`SQLITE_BUSY` / `SQLITE_LOCKED`). Clearing stale locks required repetitive manual intervention, violating the core requirement of zero-interruption autonomous engineering.
-3. **Context Dilution via Unbounded Skill Injection:** OpenClaw injected global skill manuals and system instructions directly into the primary prompt context at turn zero. In frontier LLMs, this massive prompt bloat induced severe **Attention Dilution**, degrading the model's reasoning capacity and leading to instruction-drift on complex multi-turn tasks.
-
-#### 7.5.3 Why OpenCode V2 (v2.2.x) Dominates the Autonomous Harness Landscape
-Evaluated in November 2026, **OpenCode V2** (engineered by Anomaly, `@thdxr`) represents a quantum leap in autonomous coding infrastructure:
-1. **Purpose-Built Coding Architecture:** OpenCode was designed from first principles strictly for software development. Its core runtime operates as a high-performance background daemon (`opencode serve`) cleanly decoupled from user interfaces (Electron Desktop, terminal TUI, and headless CLI) via the open Agent Client Protocol (ACP).
-2. **Zero-Plumbing Native Desktop Integration:** Completely replaces fragile background Node.js gateway scripts with a standalone desktop client (`OpenCode.exe`) and bundled CLI (`opencode-cli.exe`), launching instantaneously with zero runtime drift.
-3. **The First-Class Agent Skills Standard (`SKILL.md`) & Progressive Disclosure:** Rather than flooding the context window, OpenCode registers skills dynamically via a native `skill` tool call. Only concise triggers are indexed at startup; full operational workflows and deep reference documents (`references/`) are retrieved **on-demand (Progressive Disclosure)** only when the task requires them, minimizing baseline context bloat and preserving active reasoning bandwidth.
-4. **Deep Intrinsic Self-Awareness (`opencode` Skill):** OpenCode exposes native self-documentation to the model. The agents possess an exact, introspective understanding of their own CLI options, configuration schemas (`opencode.jsonc`), permission boundaries (`allow` / `deny`), and tool mechanics—yielding significantly higher instruction adherence and deterministic tool-calling fidelity.
-5. **Self-Extensibility & 24/7 Autonomy:** While presenting an elegant, minimalist user interface, OpenCode is intrinsically self-extensible. Autonomous agents can scaffold complex external frameworks (such as installing and orchestrating LangGraph workflows) and sustain continuous, multi-hour background session queues (`subagent_depth: 1`) without crashing.
-
-#### 7.5.4 Architecture of the Port: The ŽyrenClaw → OpenCode V2 Implementation (`zyren-port`)
-The production port was architected as an isolated, modular scaffold inside [`scaffolds/opencode/`](scaffolds/opencode/README.md) (deployable per-project in `.opencode/` or globally in `~/.config/opencode/opencode.jsonc`):
-* **Surgical Isolation & Permission Lockdown (`opencode.jsonc`):**
-  - Leaves OpenCode's default `build` and `plan` agents 100% untouched while applying a surgical permission lock (`{ "action": "subagent", "resource": "zyren-*", "effect": "deny" }`) to prevent default agents from accidentally triggering the Žyren collective.
-  - Enforces strict role boundaries on `zyren-dev-team`: `shell: deny`, `edit: deny` (with a narrow whitelist for `*zyren-sessions.md`), restricting the coordinator purely to high-level intent routing and delegation.
-  - Hard-pins `zyren-critic` to `nvidia/nvidia/nemotron-3.5-super-vl-120b-a12b` for cross-model cognitive diversity, defaults `zyren-dev-team` to `nvidia/stepfun-ai/step-5-preview` (overridable per session), and leaves the three specialists (`zyren-research`, `zyren-planner`, `zyren-coder`) unpinned so they dynamically inherit the active session model.
-  - Expands NVIDIA NIM provider timeouts (`headerTimeout: 600000`, `chunkTimeout: 900000`) to guarantee resilience against peak cloud latency spikes.
-* **The Persistent Session Protocol (`zyren-sessions.md`):**
-  - Resolves OpenCode's native subagent lifecycle constraint ("one agent = one session for the project lifetime").
-  - The coordinator reads `zyren-sessions.md` before every dispatch. Follow-up tasks and remediation cycles are routed directly into the existing child `sessionID`, permanently eliminating "orphaned session" errors (`Session X is not a child of the current session`) and preserving cumulative in-memory context across multi-step milestones.
-* **Intent-Driven Fast-Path Commands (`commands/`):**
-  - `build.md` (`/build`): Direct 1-hop invocation to `zyren-coder` for rapid feature implementation.
-  - `audit.md` (`/audit`): Direct 1-hop invocation to `zyren-critic` for deterministic runtime smoke testing.
-  - `plan.md` (`/plan`): Direct 1-hop invocation to `zyren-planner` for Walking Skeleton blueprints.
-  - `research.md` (`/research`): Direct 1-hop invocation to `zyren-research` for technical documentation vetting.
-
-#### 7.5.5 Empirical Validation: Autonomous End-to-End Delivery of `task-cli`
-On **November 11, 2026**, the Žyren collective on OpenCode V2 was subjected to a rigorous, zero-instruction autonomous software engineering benchmark: designing and implementing a zero-dependency, production-grade Python CLI task manager (`task-cli`):
-1. **Phase 1 — Technical Research (`zyren-research`):** Verified official Python 3.15 standard library specifications (`json`, `argparse`, sub-parser patterns, exit codes, and PyPA `[project.scripts]` packaging standards).
-2. **Phase 2 — Architectural Blueprint (`zyren-planner`):** Authored a comprehensive 616-line design specification (`DESIGN.md`), validated by the coordinator via disk-proof.
-3. **Phase 3 — Cohesive Implementation (`zyren-coder`):** Authored the complete 8-file package (`pyproject.toml`, `.gitignore`, `README.md`, `taskcli/__init__.py`, `__main__.py`, `models.py`, `storage.py`, `cli.py`) in a single cohesive pass, reporting two subtle design trade-offs (D2 ID reuse and D3 importability).
-4. **Phase 4 — Deterministic Quality Gate Interception (`zyren-critic`):** Executed real runtime smoke tests and static contract assertions. The Critic caught an exact documentation discrepancy in `README.md` (lines 91-92 claiming IDs are never reused, contradicting the D2 architectural ruling) and issued a **`REVISE`** verdict.
-5. **Phase 5 — Same-Session Surgical Remediation & Final Approval:** The defect was routed back to `zyren-coder`'s persistent session. The fix was applied in under 60 seconds without collateral changes. `zyren-critic` re-audited the patch and issued **`APPROVED` (0 remaining defects)**.
-6. **Milestone Completion:** The coordinator executed disk-proof verification, confirming 100% operational functionality (`add`, `list`, `done`, `delete`) and zero circular imports.
-
-* **Benchmark Conclusion — Preliminary Validation Scope (N=1 CLI Package):** While a single 8-file Python CLI does not constitute statistical proof across large enterprise repositories (scheduled for formal Track 2 and **SWE-bench Verified** evaluation in §7.4), the unguided delivery of `task-cli` confirmed zero daemon stalls, zero-orphan persistent session reuse, and clean closed-loop Critic remediation—validating OpenCode V2 as the active production harness for the Žyren collective.
-
-## 8. Citation & Attribution
+## 9. Citation & Attribution
 
 If you reference the Žyren architecture, empirical findings, or benchmark methodology in your research or systems engineering:
 
@@ -650,4 +683,4 @@ If you reference the Žyren architecture, empirical findings, or benchmark metho
 
 ---
 
-*Verified against live source repositories (`Zyren-AI-Dev-Team-I`, `Zyren-NeMo-Chassis`, `Zyren-AI-Dev-Team`, `ZyrenClaw`), in-repo scaffolds (`scaffolds/opencode/`, `scaffolds/tools/`), and documented benchmark artifacts (`benchmarks/`) — November 2026.*
+*Verified against live source repositories (`Zyren-AI-Dev-Team-I`, `Zyren-NeMo-Chassis`, `Zyren-AI-Dev-Team`, `ZyrenClaw`), in-repo scaffolds (`scaffolds/opencode/`, `scaffolds/tools/`, `scaffolds/openclaw/`), the Gen 5 CLI package (`benchmarks/task-cli/`), and documented benchmark artifacts (`benchmarks/`) — November 2026.*

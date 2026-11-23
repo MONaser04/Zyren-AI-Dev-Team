@@ -39,7 +39,7 @@ SUPPORTED_EXTENSIONS = {
     ".py", ".pyw", ".js", ".mjs", ".cjs", ".jsx", ".ts", ".tsx"
 }
 
-CACHE_DIR = Path(os.environ.get("USERPROFILE", ".")) / ".openclaw" / "cache"
+CACHE_DIR = Path(os.environ.get("ZYREN_CACHE_DIR") or (Path.home() / ".cache" / "zyren"))
 CACHE_DB_PATH = CACHE_DIR / "code_search_cache.db"
 
 EMBED_URL = "https://integrate.api.nvidia.com/v1/embeddings"

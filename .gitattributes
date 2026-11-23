@@ -1,2 +1,4 @@
-benchmarks/** linguist-vendored
+benchmarks/cat-playground/** linguist-vendored
+benchmarks/modern-fruit-catcher/** linguist-vendored
+benchmarks/neon-void/** linguist-vendored
 *.min.js linguist-vendored

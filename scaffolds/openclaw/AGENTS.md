@@ -154,7 +154,7 @@ On platforms that support reactions (Discord, Slack), use emoji reactions natura
 
 ### AST & Symbol Navigation Accelerator (`code-outline`)
 
-A high-performance zero-dependency AST outline engine is installed globally on the system (`code-outline`) and mirrored in `tools/code_outline.py`.
+A high-performance zero-dependency AST outline engine is installed globally on the system (`code-outline`) and mirrored in `scaffolds/tools/code_outline.py`.
 - **Primary Benefit**: Enables `zyren-coder` and `zyren-research` to inspect large code files (>100 lines) and extract classes, functions, docstrings, type annotations, and line ranges in ~300 tokens (reducing context consumption by 85–95%) without reading raw file bodies.
 - **Commands**:
   * Repository architectural skeleton: `code-outline <dir>`
@@ -166,7 +166,7 @@ A high-performance zero-dependency AST outline engine is installed globally on t
 
 ### Cross-File Reference, Call-Graph & Blast Radius Engine (`code-graph`)
 
-A high-performance zero-dependency cross-file reference and call-graph engine is installed globally on the system (`code-graph`) and mirrored in `tools/code_graph.py`.
+A high-performance zero-dependency cross-file reference and call-graph engine is installed globally on the system (`code-graph`) and mirrored in `scaffolds/tools/code_graph.py`.
 - **Primary Benefit**: Enables `zyren-coder` and `zyren-research` to track multi-file dependencies, inspect call hierarchies, and compute the architectural "blast radius" of code changes before editing, preventing breaking interface bugs across decoupled modules.
 - **Commands**:
   * Inbound call sites across project: `code-graph --callers <Symbol>`
@@ -178,7 +178,7 @@ A high-performance zero-dependency cross-file reference and call-graph engine is
 
 ### Semantic Code Search & Cross-Encoder Reranking Engine (`code-search`)
 
-A two-stage semantic code search and cross-encoder reranking engine powered by Google Gemini Embedding 2 (3072D) and NVIDIA Nemotron-3.5-Rerank-8B is installed globally (`code-search`) and mirrored in `tools/code_search.py`.
+A two-stage semantic code search and cross-encoder reranking engine powered by NVIDIA Nemotron-3.5-Embed-8B and NVIDIA Nemotron-3.5-Rerank-8B is installed globally (`code-search`) and mirrored in `scaffolds/tools/code_search.py`.
 - **Universal Availability**: Available to **ALL agents across the swarm** (`zyren-research`, `zyren-planner`, `zyren-coder`, `zyren-critic`, `zyren-dev-team`) via global shell execution with zero schema bloat.
 - **Primary Benefit**: Enables agents to find exact functions, classes, and logic by describing their intent in natural language (English or Arabic) across massive codebases without knowing function names in advance, saving 80–90% of token exploration waste.
 - **Commands**:
@@ -235,9 +235,9 @@ This is a starting point. Add your own conventions, style, and rules as you figu
 
 ## Related
 
-- [Default AGENTS.md](/reference/AGENTS.default)
-- [Automations vs heartbeat](/automation#automations-vs-heartbeat)
-- [Heartbeat](/gateway/heartbeat)
+- OpenClaw Upstream Reference: `reference/AGENTS.default`
+- OpenClaw Upstream Reference: `automation#automations-vs-heartbeat`
+- OpenClaw Upstream Reference: `gateway/heartbeat`
 
 
 - **Direct File Authoring**: Instruct all builder subagents (`zyren-coder`, `zyren-planner`) to write files directly using the `write` tool with absolute paths. Subagents must never call `terminal` or `process` to make directories; `write` auto-creates parent folders.

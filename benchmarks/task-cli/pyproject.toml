@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "task-cli"
+version = "0.1.0"
+description = "A small command-line task manager backed by a single JSON file."
+readme = "README.md"
+requires-python = ">=3.11"
+license = {text = "MIT"}
+keywords = ["cli", "tasks", "todo", "json"]
+
+[project.scripts]
+task = "taskcli.cli:main"
+
+[tool.setuptools]
+packages = ["taskcli"]

@@ -1,38 +1,39 @@
 # Žyren Multi-Agent Swarm Scaffolds & Runtime Tooling
 
-This directory contains the production configuration schemas, operational prompts, and code intelligence tooling across the architectural generations of the **Žyren Autonomous Engineering Collective**.
+This directory contains the production configuration schemas, operational prompts, and runtime-agnostic code intelligence tools for the **Žyren Autonomous Engineering Collective**.
 
 ---
 
 ## Directory Overview
 
-```
+```text
 scaffolds/
-├── opencode/                    # 👑 Generation 5: OpenCode V2 Production Runtime (Current)
-│   ├── opencode.example.jsonc   # Complete OpenCode V2 configuration schema
-│   ├── AGENTS.md                # OpenCode V2 operational mandates & session protocol
-│   ├── zyren-sessions.example.md# Persistent session registry template
-│   ├── commands/                # Direct fast-path commands (/build, /audit, /plan, /research)
-│   └── README.md                # Deployment and usage guide
+├── opencode/                       # 👑 Generation 5: OpenCode V2 Production Runtime (Active)
+│   ├── opencode.example.jsonc      # Complete OpenCode V2 configuration schema
+│   ├── AGENTS.md                   # OpenCode V2 operational mandates & persistent session protocol
+│   ├── zyren-sessions.example.md   # Persistent session registry template
+│   ├── commands/                   # Direct fast-path commands (/build, /audit, /plan, /research)
+│   └── README.md                   # Deployment and usage guide
 │
-├── tools/                       # 💎 Code Intelligence Engine (Cross-Platform CLI)
-│   ├── code_outline.py          # Zero-dependency AST outline engine (96.2% token savings)
-│   ├── code_graph.py            # Static cross-file caller and blast radius gate
-│   └── code_search.py           # Two-stage semantic code search (NVIDIA Nemotron-3.5-Embed-8B + Nemotron-3.5-Rerank-8B)
+├── tools/                          # 💎 Code Intelligence Engine (Cross-Platform Python CLI)
+│   ├── code_outline.py             # Zero-dependency AST outline engine (96.2% token savings)
+│   ├── code_graph.py               # Static cross-file caller and blast radius gate
+│   ├── code_search.py              # Two-stage semantic search (NVIDIA Nemotron Embed & Rerank)
+│   └── README.md                   # CLI options, caching, and examples
 │
-├── openclaw.example.json        # ⚙️ Generation 3 & 4: OpenClaw / ŽyrenClaw Collective Config
-├── AGENTS.md                    # Generation 4: OpenClaw v4.0 Specification & Soul
-├── SOUL.md                      # Operational philosophy and Conway's Law alignment
-├── CRITIC_SOUL.md               # Zero-trust deterministic runtime critic contract
-└── scripts/                     # OpenClaw Gateway Daemon Scripts
-    ├── ensure-gateway.js        # Health check and background daemon supervisor
-    └── zyrenclaw.ps1            # Native PowerShell wrapper and CLI entrypoint
+└── openclaw/                       # 📦 Generation 3 & 4: Archived OpenClaw / ŽyrenClaw Baseline
+    ├── openclaw.example.json       # Legacy 5-agent OpenClaw collective config
+    ├── AGENTS.md                   # Legacy OpenClaw v4.0 workspace specification
+    ├── SOUL.md                     # Coordinator operational philosophy & LangClaw hooks
+    ├── CRITIC_SOUL.md              # Zero-trust deterministic runtime critic contract
+    ├── scripts/                    # Legacy Windows daemon & wrapper scripts
+    └── README.md                   # Historical archive notes
 ```
 
 ---
 
-## Active Generation Guidance
+## Navigation
 
-- **For New Deployments (Recommended):** Use [`scaffolds/opencode/`](./opencode/README.md). It represents the state-of-the-art **Generation 5** autonomous coding runtime, delivering high instruction adherence, progressive skill disclosure, and stable background service execution on OpenCode V2.
-- **For OpenClaw Environments:** Refer to `openclaw.example.json` and root `AGENTS.md` for the historical **Generation 3/4** gateway baseline.
-- **For Tooling:** The scripts in [`tools/`](./tools/) are runtime-agnostic Python utilities compatible with both OpenCode and OpenClaw environments.
+- **Active Production Runtime (Gen 5 — Recommended):** [`scaffolds/opencode/README.md`](./opencode/README.md) — streamlined TypeScript daemon + Desktop/CLI harness with progressive skill disclosure and persistent child sessions.
+- **Code Intelligence Utilities:** [`scaffolds/tools/README.md`](./tools/README.md) — standalone Python CLI tools compatible with any execution harness.
+- **Archived Baseline (Gen 3/4):** [`scaffolds/openclaw/README.md`](./openclaw/README.md) — historical OpenClaw reference retained for reproducibility of the Gen 3/4 canary benchmarks.

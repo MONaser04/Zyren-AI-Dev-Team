@@ -1,6 +1,6 @@
 # Žyren Collective — OpenCode V2 Port · AGENTS.md (v4.0 Spec)
 
-> Ported from `scaffolds/AGENTS.md` (OpenClaw) to OpenCode V2 mechanics.
+> Ported from `scaffolds/openclaw/AGENTS.md` (OpenClaw) to OpenCode V2 mechanics.
 > Mechanism mapping: `sessions_spawn` -> `subagent` tool · `sessions_send` -> passing `sessionID` to continue the persistent agent session.
 >
 > **Model policy (V2 resolution order, documented):** A subagent uses the `model` passed in the tool call, then its own configured model, then the parent session's model. The coordinator (`zyren-dev-team`) defaults to `nvidia/stepfun-ai/step-5-preview`; the three specialists (`zyren-research`, `zyren-planner`, `zyren-coder`) carry no pinned model and therefore **inherit whatever model is selected for the session/app**, so one selection in the app moves the whole team. The critic (`zyren-critic`) is the only pinned specialist — `nvidia/nvidia/nemotron-3.5-super-vl-120b-a12b` — kept fixed for cross-model diversity (and because that endpoint does not stall like the others). Changing a subagent's model mid-task: pass `model` on the follow-up `subagent` call with the same `sessionID`, or `POST /api/session/{sessionID}/model` (applies to subsequent provider turns only).
