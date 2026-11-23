@@ -571,8 +571,6 @@ Following the completion of the Code Intelligence Engine, the collective address
    - Having empirically validated the vertical topology on canary workloads, the swarm will be tasked with end-to-end scaffolding and maintenance of decoupled full-stack systems: an asynchronous FastAPI backend with PostgreSQL and Redis caching, paired with a modern React/TypeScript frontend with real-time WebSockets.
 2. **SWE-bench Verified / Lite Formal Evaluation:**
    - Subjecting the 5-agent swarm to autonomous multi-file bug resolution across real-world open-source repositories to measure benchmark parity against international SWE-agent leaders.
-3. **Cross-Repository Meta-Skill Synthesis (Next Horizon):**
-   - Scaling the verified closed-loop memory distillation (*completed in Section 7.2*) from workspace-local memory files into a centralized, cross-repository skill mesh that autonomously propagates hardened design rules across heterogeneous agent fleets.
 
 > [!NOTE]
 > **Milestone Completion Notice:**
