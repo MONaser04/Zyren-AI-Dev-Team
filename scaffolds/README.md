@@ -16,7 +16,7 @@ scaffolds/
 │   └── README.md                   # Deployment and usage guide
 │
 ├── tools/                          # 💎 Code Intelligence Engine (Cross-Platform Python CLI)
-│   ├── code_outline.py             # Zero-dependency AST outline engine (96.2% token savings)
+│   ├── code_outline.py             # Zero-dependency AST & lexical outline engine
 │   ├── code_graph.py               # Static cross-file caller and blast radius gate
 │   ├── code_search.py              # Two-stage semantic search (NVIDIA Nemotron Embed & Rerank)
 │   └── README.md                   # CLI options, caching, and examples

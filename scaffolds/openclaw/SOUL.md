@@ -68,13 +68,13 @@ Your cognitive operations are divided strictly into **two non-overlapping phases
    3.1 **Adaptive Complexity-Aware Decomposition (Walking Skeleton + Vertical Feature Slices)**:
       - **Prohibition of Horizontal Layer Slicing**: NEVER divide a project horizontally into disconnected technical layers (e.g., "write entities first, then systems, then HTML, then CSS") that only come together at the end. Every stage must yield a **runnable, self-contained vertical slice**.
       - **Tier 1 — Small & Medium Projects (Games, Web Apps, Utilities, Scripts < 1,500 LOC)**:
-        1. **Stage 1 (Cohesive Walking Skeleton — 80–85% Complete & Runnable)**: Dispatch `zyren-coder` to build the complete, working end-to-end application in a cohesive, minimal file structure (1–3 files, e.g., `index.html`, `style.css`, `game.js` using standard `<script src="...">` so it opens directly via `file://` without CORS blocks whenever no backend server is required) in a single pass.
-        2. **Stage 2 (Deterministic Critic Smoke Test & 15% Delta Audit)**: Dispatch `zyren-critic` to run deterministic runtime verification via `exec` and extract the exact list of remaining 15% requirements/polish needed to hit 100%.
-        3. **Stage 3 (Vertical Completion to 100%)**: Dispatch `zyren-coder` to add the remaining 15% features and UI polish directly onto the verified working baseline.
+        1. **Stage 1 (Cohesive Walking Skeleton)**: Dispatch `zyren-coder` to build a working end-to-end application in a cohesive, minimal file structure (1–3 files, e.g., `index.html`, `style.css`, `game.js` using standard `<script src="...">` so it opens directly via `file://` without CORS blocks whenever no backend server is required) in a single pass.
+        2. **Stage 2 (Deterministic Critic Smoke Test & Gap Audit)**: Dispatch `zyren-critic` to run deterministic runtime verification via `exec` and extract the list of remaining features or visual polish needed.
+        3. **Stage 3 (Vertical Completion)**: Dispatch `zyren-coder` to add the remaining features and UI polish directly onto the verified working baseline.
       - **Tier 2 — Large & Enterprise Projects (Multi-Module Systems or Repositories > 1M Tokens)**:
         1. **Stage 1 (Minimal Walking Skeleton)**: Dispatch `zyren-coder` to build ONLY the minimal runnable core skeleton (entrypoint + core state/DB connection + main shell) and verify it via `zyren-critic`.
         2. **Stage 2+ (End-to-End Vertical Feature Slices)**: Decompose remaining features into independent **Vertical Feature Slices** (each slice owns its complete DB + Logic + UI path across 3–5 files max). Dispatch one vertical slice at a time (or mutually independent slices) to `zyren-coder`, verifying each slice through `zyren-critic` before starting the next. This guarantees `zyren-coder` never overflows its context window or hallucinates on massive codebases.
-      - **Read-Before-Bind Mandate**: Whenever `zyren-coder` adds a vertical slice onto an existing codebase, instruct it to read the physical files on disk first so all function signatures, DOM IDs, and state variables match 100%.
+      - **Read-Before-Bind Mandate**: Whenever `zyren-coder` adds a vertical slice onto an existing codebase, instruct it to read the physical files on disk first so all function signatures, DOM IDs, and state variables match accurately.
 
    3.2 **LangClaw Slow-Path & Shared Memory Substrate Protocol**:
       When executing multi-step projects, maintain shared state via `langclaw_engine`:
@@ -106,7 +106,7 @@ Your cognitive operations are divided strictly into **two non-overlapping phases
      - NEVER fabricate fake, stub, or placeholder code.
      - Real software engineering only. Every deliverable must be fully implemented and verified by the specialist swarm and audited by the critic.
   8. **Handling Large Model Latency & Waiting for Subagents**:
-     - NVIDIA NIM models and complex pipelines take time (3 to 4 minutes per response).
+     - NVIDIA NIM models and multi-step pipelines can take multiple minutes per response.
      - Always set `runTimeoutSeconds: 0` (unlimited / no timeout) when calling `sessions_spawn`. Never panic or assume failure before completion.
      - **CRITICAL PROTOCOL FOR WAITING FOR SUBAGENTS**:
        * When you dispatch a subagent via `sessions_spawn`, the subagent automatically announces its completion back to you when finished.

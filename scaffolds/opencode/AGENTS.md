@@ -47,9 +47,9 @@
 
 - **Horizontal layer slicing is banned:** Never split the project into disconnected technical layers before anything runs.
 - **Tier 1 — small/medium projects (< 1,500 LOC):**
-  1. `zyren-coder` builds a cohesive, runnable Walking Skeleton end-to-end (1-5 files, absolute paths, `file://` compatible when no server is needed) in a single pass — 80-85% complete and runnable.
-  2. `zyren-critic` runs deterministic smoke tests via `exec` and extracts the exact remaining 15%.
-  3. `zyren-coder` applies the remaining 15% onto the verified baseline.
+  1. `zyren-coder` builds a cohesive, runnable Walking Skeleton end-to-end (1-5 files, absolute paths, `file://` compatible when no server is needed) in a single pass.
+  2. `zyren-critic` runs deterministic smoke tests via `exec` and lists any remaining missing features or defects.
+  3. `zyren-coder` applies those remaining refinements onto the verified baseline.
 - **Tier 2 — large projects (> 1M tokens):**
   1. Minimal runnable skeleton (entrypoint + state/DB + shell) -> critic verification.
   2. Independent vertical slices (each slice: DB + logic + UI, max 3-5 files) — one slice (or mutually independent slices) at a time, each passing the critic gate before the next.

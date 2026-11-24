@@ -4,7 +4,7 @@
 code_outline - High-Performance AST & Symbol Outline Engine for Autonomous Coding Agents
 Provides rapid structural sight (classes, functions, signatures, docstrings, line ranges)
 across Python, JavaScript, and TypeScript repositories without reading full file bodies,
-reducing context window consumption by 85-95%.
+to avoid loading full file bodies into prompt context.
 """
 
 import os

@@ -42,7 +42,7 @@ To isolate the collective strictly to a specific repository:
 ## Architectural Principles & Rules
 
 1. **Surgical Isolation:** 
-   The configuration defines `zyren-*` agent IDs and places surgical permission locks on the default `build` and `plan` agents (`deny: "zyren-*"`), ensuring default OpenCode workflows remain 100% unaffected.
+   The configuration defines `zyren-*` agent IDs and places surgical permission locks on the default `build` and `plan` agents (`deny: "zyren-*"`), ensuring default OpenCode workflows remain unaffected.
 2. **Model Inheritance Policy:**
    - The coordinator (`zyren-dev-team`) defaults to `nvidia/stepfun-ai/step-5-preview`.
    - The three specialists (`zyren-research`, `zyren-planner`, `zyren-coder`) carry **no pinned model** and dynamically inherit whatever model you select in the session/app.

@@ -7,7 +7,7 @@ This directory houses the self-contained empirical benchmarks produced autonomou
 ## Generation 5 — OpenCode V2 (Active Production Harness)
 
 - **[`task-cli/`](./task-cli/)** — Zero-dependency Python CLI task manager built end-to-end on OpenCode V2 (`v2.2.7`) with zero human code edits:
-  - Architectural blueprint: [`task-cli/DESIGN.md`](./task-cli/DESIGN.md) (616 lines, authored by `zyren-planner`)
+  - Architectural blueprint: [`task-cli/DESIGN.md`](./task-cli/DESIGN.md) (635 lines on disk, authored by `zyren-planner`)
   - Auditable multi-agent trace: [`task-cli/SESSION_TRACE.md`](./task-cli/SESSION_TRACE.md) (research → design → 8-file implementation → Critic `REVISE` interception → same-session fix → `APPROVED`)
   - Usage & package docs: [`task-cli/README.md`](./task-cli/README.md)
 
@@ -23,5 +23,5 @@ Interactive WebGL/Canvas2D microcosms used to calibrate Vertical Feature Slicing
 - **[`cat-playground/`](./cat-playground/)** — Interactive 3D WebGL (Three.js + Cannon.js) physics landing page verifying zero-trust defect interception and durable self-learning crystallization:
   - [`_audit/REPORT.md`](./cat-playground/_audit/REPORT.md) (and portable audit scripts `extract.js`, `phase2.js`, `phase3.js`)
   - [`learning-memory-2026-10-23.md`](./cat-playground/learning-memory-2026-10-23.md)
-- **[`neon-void/`](./neon-void/)** — 2D twin-stick arcade survival game built under a zero-instruction 15-minute sprint, catching and repairing a boot-time render loop blocker before delivery:
+- **[`neon-void/`](./neon-void/)** — 2D twin-stick arcade survival game built from a short prompt asking for a lightweight standalone game, catching and repairing a boot-time render loop blocker before delivery:
   - [`critic-audit.md`](./neon-void/critic-audit.md)

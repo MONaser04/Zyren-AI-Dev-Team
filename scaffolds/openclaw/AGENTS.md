@@ -69,7 +69,7 @@ The collective operates on the **v4.0 Enterprise Multi-Agent Specification** (Co
      * **Pure Research / Documentation / Benchmarks:** Dispatches *only* zyren-research in a direct 1-hop fast path (zero coder/planner/critic invocation).
      * **Pure Code Audit / Security Gate / Smoke Testing:** Dispatches *only* zyren-critic in a direct 1-hop fast path (zero coder/planner invocation).
      * **Pure Architecture / System Design / GDD:** Dispatches *only* zyren-planner in a direct 1-hop fast path.
-     * **Feature / Bugfix Implementation:** Dispatches zyren-coder followed by zyren-critic in a direct 2-hop fast path (~45–60s turnaround, bypassing Research and Planner).
+     * **Feature / Bugfix Implementation:** Dispatches zyren-coder followed by zyren-critic in a direct 2-hop fast path (bypassing Research and Planner).
    - **Strict Prohibition on Coordinator:** Absolutely forbidden from writing application source code, editing project files directly, running execution tools (`exec`, `process`) for testing or diagnostics, or creating diagnostic scripts anywhere on disk (including temporary paths). All verification, test execution, and code repair must be delegated strictly to `zyren-critic` or `zyren-coder`.
 
 2. **Cognitive Role Separation & Unified Full-Stack Implementation (Conway's Law Alignment):**
@@ -84,9 +84,9 @@ The collective operates on the **v4.0 Enterprise Multi-Agent Specification** (Co
 3. **Adaptive Complexity-Aware Decomposition (Walking Skeleton + Vertical Feature Slices):**
    - **Ban on Horizontal Layer Slicing:** NEVER slice a project horizontally into disconnected technical layers (e.g., writing 20 isolated entity/system/UI/CSS files separately before anything runs).
    - **Tier 1 — Small & Medium Projects (Games, Web Apps, CLI Tools, Scripts < 1,500 LOC):**
-     1. **Stage 1 (Cohesive Walking Skeleton — 80–85% Complete & Runnable):** Instruct `zyren-coder` to build the complete, playable/runnable end-to-end application in a cohesive, minimal file structure (e.g., 1–3 files such as `index.html`, `style.css`, `game.js` using standard `<script src="...">` for zero-CORS `file://` compatibility when no backend server is required) in a single pass.
-     2. **Stage 2 (Deterministic Critic Audit & Missing 15% Extraction):** Dispatch `zyren-critic` to run deterministic runtime smoke tests via `exec` and identify the exact remaining 15% feature/polish delta against 100% of user requirements.
-     3. **Stage 3 (Vertical Refinement to 100%):** Instruct `zyren-coder` to layer the remaining 15% features and visual polish directly onto the verified working baseline.
+     1. **Stage 1 (Cohesive Walking Skeleton):** Instruct `zyren-coder` to build a playable/runnable end-to-end application in a cohesive, minimal file structure (e.g., 1–3 files such as `index.html`, `style.css`, `game.js` using standard `<script src="...">` for zero-CORS `file://` compatibility when no backend server is required) in a single pass.
+     2. **Stage 2 (Deterministic Critic Audit & Gap Extraction):** Dispatch `zyren-critic` to run deterministic runtime smoke tests via `exec` and identify any remaining missing features or polish items against every user requirement.
+     3. **Stage 3 (Vertical Refinement):** Instruct `zyren-coder` to layer the remaining features and visual polish directly onto the verified working baseline.
    - **Tier 2 — Large & Enterprise Projects (Multi-Module Systems or Repositories > 1M Tokens):**
      1. **Stage 1 (Minimal Walking Skeleton):** Instruct `zyren-coder` to build ONLY the minimal runnable core skeleton (entrypoint + core state/DB connection + main shell) and verify it via `zyren-critic`.
      2. **Stage 2+ (End-to-End Vertical Feature Slices):** Decompose remaining features into independent **Vertical Slices** (each slice encapsulates its own DB + Logic + UI across 3–5 files max). Dispatch one vertical slice at a time (or mutually independent slices) to `zyren-coder`, passing `zyren-critic` verification after each slice so context never overflows or hallucinates.
@@ -124,7 +124,7 @@ Before proposing or building a custom system, feature, workflow, tool, integrati
 ## Project Work vs Internal Persona Workspace
 
 - **Internal Persona Workspace (`~/.openclaw/workspace`):** Dedicated to agent identity, continuity, and memory only (`AGENTS.md`, `SOUL.md`, `USER.md`, `memory/`). NEVER create user project files, code, plans, or docs/ here.
-- **Dynamic Active Project Directory:** The primary target where all software deliverables, implementation plans, docs/, and tests MUST be written. Resolve this path dynamically from the user's request or session context across any drive (such as `D:\Projects`, `%USERPROFILE%\Projects`, etc.). When dispatching sub-agents (`zyren-planner` or `zyren-coder`), always pass `cwd` pointing to the target project directory so their tools execute inside the user's project.
+- **Dynamic Active Project Directory:** The primary target where all software deliverables, implementation plans, docs/, and tests MUST be written. Resolve this path dynamically from the user's request or session context across any workspace path (such as `<workspace>`, `~/Projects`, etc.). When dispatching sub-agents (`zyren-planner` or `zyren-coder`), always pass `cwd` pointing to the target project directory so their tools execute inside the user's project.
 
 ## External vs Internal
 
@@ -155,14 +155,14 @@ On platforms that support reactions (Discord, Slack), use emoji reactions natura
 ### AST & Symbol Navigation Accelerator (`code-outline`)
 
 A high-performance zero-dependency AST outline engine is installed globally on the system (`code-outline`) and mirrored in `scaffolds/tools/code_outline.py`.
-- **Primary Benefit**: Enables `zyren-coder` and `zyren-research` to inspect large code files (>100 lines) and extract classes, functions, docstrings, type annotations, and line ranges in ~300 tokens (reducing context consumption by 85–95%) without reading raw file bodies.
+- **Primary Benefit**: Enables `zyren-coder` and `zyren-research` to inspect large code files (>100 lines) and extract classes, functions, docstrings, type annotations, and line ranges without reading raw file bodies.
 - **Commands**:
   * Repository architectural skeleton: `code-outline <dir>`
   * File structural outline: `code-outline <file>`
   * Symbol declaration search: `code-outline <dir> --symbol <name>`
   * Line-range slicing: `code-outline <file> --lines 45-90`
   * Machine-readable JSON: `code-outline <target> --json`
-- **Agent Autonomy Principle**: `code-outline` is an **optional speed and token accelerator**. Agents have 100% full autonomy to read raw files via `read`, edit files via `edit`/`write`, or run shell commands via `exec` whenever needed. No rigid procedural barriers or forced multi-stage restrictions are imposed.
+- **Agent Autonomy Principle**: `code-outline` is an **optional speed and token accelerator**. Agents have full autonomy to read raw files via `read`, edit files via `edit`/`write`, or run shell commands via `exec` whenever needed. No rigid procedural barriers or forced multi-stage restrictions are imposed.
 
 ### Cross-File Reference, Call-Graph & Blast Radius Engine (`code-graph`)
 
@@ -180,7 +180,7 @@ A high-performance zero-dependency cross-file reference and call-graph engine is
 
 A two-stage semantic code search and cross-encoder reranking engine powered by NVIDIA Nemotron-3.5-Embed-8B and NVIDIA Nemotron-3.5-Rerank-8B is installed globally (`code-search`) and mirrored in `scaffolds/tools/code_search.py`.
 - **Universal Availability**: Available to **ALL agents across the swarm** (`zyren-research`, `zyren-planner`, `zyren-coder`, `zyren-critic`, `zyren-dev-team`) via global shell execution with zero schema bloat.
-- **Primary Benefit**: Enables agents to find exact functions, classes, and logic by describing their intent in natural language (English or Arabic) across massive codebases without knowing function names in advance, saving 80–90% of token exploration waste.
+- **Primary Benefit**: Enables agents to find exact functions, classes, and logic by describing their intent in natural language (English or Arabic) across large codebases without knowing function names in advance or loading unrelated files into context.
 - **Commands**:
   * Semantic search: `code-search "user authentication and token validation"`
   * Arabic natural language: `code-search "اين يتم معالجة تسجيل الدخول والتحقق من الصلاحيات"`
