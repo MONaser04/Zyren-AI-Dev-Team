@@ -4,7 +4,7 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License: MIT" />
-  <img src="https://img.shields.io/badge/Runtime-OpenCode%20V2%20(v2.2.7)-10b981.svg" alt="Runtime: OpenCode V2" />
+  <img src="https://img.shields.io/badge/Runtime-OpenCode%20V2%20(v2.4.x)-10b981.svg" alt="Runtime: OpenCode V2" />
   <img src="https://img.shields.io/badge/Python-3.11%2B-3776ab.svg" alt="Python 3.11+" />
   <img src="https://img.shields.io/badge/Topology-5--Agent%20Hub--and--Spoke-8b5cf6.svg" alt="Topology: 5-Agent Hub-and-Spoke" />
 </p>
@@ -21,7 +21,7 @@
   2. **Generation 2A (Domain-Agnostic NVIDIA NeMo Execution Chassis):** [MONaser04/Zyren-NeMo-Chassis](https://github.com/MONaser04/Zyren-NeMo-Chassis)
   3. **Generation 2B (Dual-Brain Multimodal Liaison & Switchyard Router):** [MONaser04/Zyren-AI-Dev-Team-II](https://github.com/MONaser04/Zyren-AI-Dev-Team-II)
   4. **Generation 3 & 4 (Production Autonomous Engineering Runtime):** **ŽyrenClaw** (Decoupled OpenClaw Architecture + **LangClaw** `v0.4.0` Sidecar Prototype + 5-Agent Vertical Topology) — *Archived Scaffold: [`scaffolds/openclaw/`](scaffolds/openclaw/README.md) in this repo*
-  5. **Generation 5 (Coding Harness Migration — OpenCode V2):** **Žyren on OpenCode V2** ([MONaser04/Zyren-AI-Dev-Team](https://github.com/MONaser04/Zyren-AI-Dev-Team) — Decoupled TypeScript Engine + Electron Desktop Harness + Native Agent Skills Specification + Isolated 5-Agent Hub-and-Spoke Topology in `scaffolds/opencode/`) — *Replacing custom Node daemon plumbing with native background service execution, progressive skill disclosure, and a preliminary end-to-end Python CLI canary (`task-cli`).*
+  5. **Generation 5 (Coding Harness Migration — OpenCode V2):** **Žyren on OpenCode V2** ([MONaser04/Zyren-AI-Dev-Team](https://github.com/MONaser04/Zyren-AI-Dev-Team) — Decoupled TypeScript Engine + Electron Desktop Harness + Native Agent Skills Specification + Unified UFO `gemini-3.8-live` Computer Use + Structured LangGraph MCP/Skills in `scaffolds/opencode/`) — *Replacing custom Node daemon plumbing with native background service execution, progressive skill disclosure, unified desktop vision/voice control, and a preliminary end-to-end Python CLI canary (`task-cli`).*
 
 > [!NOTE]
 > **Scope & Methodological Note (Personal Field Notes — Not Universal Laws):**  
@@ -37,7 +37,7 @@ This case study documents my personal engineering notes across five iterative se
 1. **Generation 1 (`Zyren-AI-Dev-Team-I`):** A Python monorepo (`23,050` lines across `100` files in `src/`, `19,373` non-empty lines) featuring **17 specialized SDLC agent roles** (+ 3 operational agents), a **LangGraph Supervisor Star Topology**, a **6-Domain Semantic Router**, **SmartGateway** with **Bayesian Thompson Sampling** across **10 LLM provider adapters**, and **29 offline test suites**.
 2. **Generation 2 (`Zyren-NeMo-Chassis` & `Zyren-AI-Dev-Team-II`):** A modular infrastructure chassis built for the **NVIDIA NeMo / NIM ecosystem** and **NVIDIA AI Workbench** using lightweight local SQLite WAL state with inference offloaded to cloud NVIDIA NIM endpoints, paired with a **Dual-Brain Liaison Agent** combining a **Google Gemini Live API Voice Facade** (`gemini-3.1-flash-live-preview`) with an **NVIDIA Nemotron Reasoning Core** (`nvidia/nemotron-3-ultra-550b-a55b`).
 3. **Generation 3 & 4 (`ŽyrenClaw`):** A return to **OpenClaw**, customized at the CLI and UI layers into **ŽyrenClaw** without forking upstream OpenClaw's core runtime, paired with the **LangClaw** state/memory prototype, and simplified into a **5-agent Hub-and-Spoke setup** organized around **Vertical Feature Slicing (Walking Skeletons)** and an **execution-based Critic gate**.
-4. **Generation 5 (`OpenCode V2`):** A migration from general automation gateways to **OpenCode V2 (v2.2.7)** as a dedicated software engineering harness—eliminating custom daemon scripts and SQLite lock contention, using the **Agent Skills standard (`SKILL.md`)** with progressive disclosure, and completing an initial end-to-end Python CLI canary (`task-cli`, N=1) prior to future SWE-bench testing.
+4. **Generation 5 (`OpenCode V2`):** A migration from general automation gateways to **OpenCode V2 (v2.4.x)** as a dedicated software engineering harness—eliminating custom daemon scripts and SQLite lock contention, using the **Agent Skills standard (`SKILL.md`)** with progressive disclosure, integrating unified Windows desktop **Computer Use & Live Voice** (`Microsoft UFO` + `gemini-3.8-live`) plus **LangGraph** remote MCPs (`langchain-docs` / `langchain-reference`), and completing an initial end-to-end Python CLI canary (`task-cli`, N=1) prior to future SWE-bench testing.
 
 ---
 
@@ -53,12 +53,13 @@ This case study documents my personal engineering notes across five iterative se
 | 🧠 **Gen 2: NVIDIA NeMo & Dual-Brain** | **Consolidated 2-Tier Hierarchy** (SQLite WAL local state + cloud NIM offload) | • Native **NVIDIA NIM & AI Workbench** integration<br>• Dual-Brain: Gemini Live Voice Facade + Nemotron 550B Ultra Reasoning | ⚠️ **Plumbing vs. Runtime:** Validated voice streaming and dual-tier routing, but lacked a native interactive coding CLI harness. | 📦 **Status:** [Zyren-NeMo-Chassis](https://github.com/MONaser04/Zyren-NeMo-Chassis) & [Zyren-AI-Dev-Team-II](https://github.com/MONaser04/Zyren-AI-Dev-Team-II)<br>*(📦 Archived)* |
 | ⚙️ **Gen 3: Forging ŽyrenClaw** | **Decoupled Upstream Wrapper (Zero-Fork Runtime)** + **LangClaw** State Sidecar | • Decoupled UI & CLI branding (`zyrenclaw.ps1`)<br>• **Upstream updates preserved (no core fork)**<br>• SQLite episodic vector memory prototype | ❌ **Horizontal Layer Trap:** Splitting frontend, backend, and storage across separate agents caused DOM ID and contract mismatches. | 🔄 **Status:** [MONaser04/Zyren-AI-Dev-Team](https://github.com/MONaser04/Zyren-AI-Dev-Team)<br>*(📦 Archived Gen 3/4 Baseline — `scaffolds/openclaw/openclaw.example.json`)* |
 | 🚀 **Gen 4: Lean 5-Agent Topology** | **Strict Hub-and-Spoke** (Coordinator, Researcher, Planner, Coder, Critic) | • **Vertical Feature Slicing (Walking Skeletons)**<br>• **Deterministic Runtime Smoke Gate (`exec`)**<br>• Unified Full-Stack Coder | ✅ **Fewer Merge Breaks:** 3 self-contained canary deliveries (`modern-fruit-catcher`, `cat-playground`, `neon-void`) completed via closed-loop Critic self-repair. | 🎯 **Status:** `benchmarks/` (`modern-fruit-catcher/`, `cat-playground/`, `neon-void/`)<br>*(✅ Canary Verified)* |
-| 👑 **Gen 5: OpenCode V2 Migration** | **OpenCode V2 (v2.2.7) 5-Agent Port** (`scaffolds/opencode/`) | • Native TypeScript background service (`opencode serve`) + Desktop/TUI<br>• First-Class **Agent Skills Standard** (`SKILL.md`) with Progressive Disclosure<br>• Persistent Session Protocol (`zyren-sessions.md`) | ✅ **Fewer Daemon Drops:** Replaced custom Node.js gateway wrappers, SQLite lock contention, and startup prompt bloat in OpenClaw, verified via an initial CLI canary (`task-cli`, N=1). | 🚀 **Status:** [`scaffolds/opencode/`](scaffolds/opencode/README.md) & [`benchmarks/task-cli/`](benchmarks/task-cli/README.md)<br>*(✅ Active Setup — Preliminary Canary Validated)* |
+| 👑 **Gen 5: OpenCode V2 Migration** | **OpenCode V2 (v2.4.x) 5-Agent Port** (`scaffolds/opencode/`) | • Native TypeScript background service (`opencode serve`) + Desktop/TUI<br>• First-Class **Agent Skills Standard** (`SKILL.md`) with Progressive Disclosure<br>• Persistent Session Protocol (`zyren-sessions.md`) & MCP extensibility | ✅ **Fewer Daemon Drops:** Replaced custom Node.js gateway wrappers, SQLite lock contention, and startup prompt bloat in OpenClaw, verified via an initial CLI canary (`task-cli`, N=1). | 🚀 **Status:** [`scaffolds/opencode/`](scaffolds/opencode/README.md) & [`benchmarks/task-cli/`](benchmarks/task-cli/README.md)<br>*(✅ Active Setup — Preliminary Canary Validated)* |
 | ⚡ **Gen 4 Stress Experiment: Multi-Hour Endurance Run** | **Long-Horizon Build** (`grand-project`) | • **Elevated Session Timeout** (`timeoutSeconds: 36000`)<br>• **State-Anchored Protocol** (`PROGRESS.md` on disk against Compaction Cliff)<br>• Host memory caps configured via `.wslconfig` | ⚠️ **Exposed Daemon Contention:** Extended local runs tested disk-anchored `PROGRESS.md` persistence while surfacing OpenClaw daemon fragility that motivated moving to OpenCode V2. | 📦 **Status:** Local stress experiment (not bundled in repo)<br>*(📦 Archived Gen 4 Experiment)* |
 | 💎 **Track 1: Local Code Intelligence Tools** | **AST + Call-Graph + NVIDIA Nemotron Embed & Rerank** | • `code-outline`: structural AST & lexical outline without loading full bodies<br>• `code-graph`: static cross-file caller & `--impact` check<br>• `code-search`: two-stage **NVIDIA Nemotron-3.5-Embed-8B & Nemotron-3.5-Rerank-8B** | ✅ **Lower Context Bloat:** Python CLI utilities implemented and tested locally on repo files. | 🛠️ **Status:** `scaffolds/tools/` (`code-outline`, `code-graph`, `code-search`)<br>*(🛠️ Local CLI Tools)* |
 | 🧠 **Role-Scoped Memory & Post-Mortem Capture** | **Role-Private Notes (`DecentMem` inspiration) + 3072D Vector Index (`gemini-embedding-2`)** | • Configured **Google Gemini Embedding 2** (published spec: 3072 dims, 8192-token context, CoIR 84.0) via `sqlite-vec`<br>• Hybrid search (0.7 vector + 0.3 BM25) + MMR diversity<br>• Role-specific markdown logs (`critic-rules.md`, `dev-gotchas.md`, `research-patterns.md`, `architecture-contracts.md`) | ✅ **Defect Note Persistence:** Tested recording Critic-caught physics/coordinate gotchas into durable markdown memory in `cat-playground`. | 🎯 **Status:** `benchmarks/cat-playground/`<br>*(✅ Canary Tested)* |
 | 🛡️ **Reliability Guardrails & Host Resource Governance** | **Two-Strike Write-First Contract + Circuit Breaker + WSL2/RAM Governance** | • **Two-Strike Retry Budget** for missing disk writes + transient error retry caps<br>• Host RAM governance via `.wslconfig` memory caps (`autoMemoryReclaim=gradual`, `sparseVhd=true`), orphaned MCP cleanup, and Edge `--app` mode<br>• Cross-project session isolation & disk-proof reads | ✅ **Practical Guardrails:** Codified loop caps and host memory hygiene rules that reduced local hangs during extended sessions. | 🚀 **Status:** Documented in `scaffolds/openclaw/AGENTS.md` & `scaffolds/opencode/AGENTS.md`<br>*(📝 In-Repo Guardrails)* |
-| 🔭 **Microsoft UFO OS Automation** *(Standby)* | **Native Windows GUI & Desktop Control** | • Microsoft UFO bridge (`live_ufo_bridge.py`)<br>• UI Automation (UIA) tree control & Vision-Language | ⏳ **Strategic Standby:** Architecture complete; tactically frozen awaiting desktop vision spatial grounding maturity. | ⏸️ **Status:** `projects/ufo-automation/`<br>*(⏸️ Architected & Placed on Standby)* |
+| 🎙️ **Unified Computer Use & Live Voice (Microsoft UFO + `gemini-3.8-live`)** | **Singleton Voice/Vision Daemon + 16-Tool MCP (`zyren-ufo`) Across All 7 Agents** | • **`gemini-3.8-live`** real-time Voice + UIA Set-of-Mark desktop control paired with coding/audit models (plus headless `gemini-3.8-flash` fallback)<br>• `zyren-ufo` MCP (`codemode: false`, `pool: true`) + Electron GUI plugin (`zyren-live-voice`) via Main IPC<br>• Shared FIFO desktop lock & safety pause gate | ✅ **Conflict-Free Desktop Control:** Resolved dual-voice collisions, Electron CORS/CSP blocks, UIPI admin elevation, and Code Mode invisibility; passed `34` unit/integration tests + live MCP capture check. | 🚀 **Status:** [§8.3](#83-unified-windows-computer-use--live-voice-via-microsoft-ufo--gemini-38-live-integrated) & [`scaffolds/opencode/skills/computer-use/`](scaffolds/opencode/skills/computer-use/SKILL.md)<br>*(✅ Integrated & Active)* |
+| 🕸️ **Structured LangGraph Stack** | **Live Official Remote MCPs + Progressive `SKILL.md` Workflow** | • `langchain-docs` (`docs.langchain.com/mcp`) + `langchain-reference` (`reference.langchain.com/mcp`) with `pool: true`<br>• Global `langgraph/SKILL.md` (`StateGraph`, `Command`, `Send`, `interrupt()`, checkpointers, `BaseStore`) | ✅ **Up-to-Date Graph Scaffolding:** Live API grounding + zero turn-zero bloat via progressive skill disclosure; verified connected on OpenCode v2.4.1. | 🚀 **Status:** [§8.4](#84-structured-langgraph-integration-on-opencode-v2-integrated) & [`scaffolds/opencode/skills/langgraph/`](scaffolds/opencode/skills/langgraph/SKILL.md)<br>*(✅ Integrated & Active)* |
 
 ---
 
@@ -100,7 +101,7 @@ This case study documents my personal engineering notes across five iterative se
 
 | Path | Role | Highlights |
 |---|---|---|
-| [`scaffolds/opencode/`](scaffolds/opencode/README.md) | **Gen 5 Production Runtime (OpenCode V2)** | `opencode.example.jsonc`, persistent session `AGENTS.md`, and `/build`, `/audit`, `/plan`, `/research` fast-paths |
+| [`scaffolds/opencode/`](scaffolds/opencode/README.md) | **Gen 5 Production Runtime (OpenCode V2)** | `opencode.example.jsonc` (agents + `zyren-ufo` & LangChain MCPs), `AGENTS.md`, `skills/` (`computer-use`, `langgraph`), and `/build`, `/audit`, `/plan`, `/research`, `/voice` |
 | [`scaffolds/tools/`](scaffolds/tools/README.md) | **Code Intelligence Tools (Python CLI)** | `code_outline.py` (zero-dependency AST/lexical outline), `code_graph.py` (`--impact` caller graph), `code_search.py` (NVIDIA Nemotron Embed & Rerank) |
 | [`scaffolds/openclaw/`](scaffolds/openclaw/README.md) | **Gen 3/4 OpenClaw Reference (Archived)** | `openclaw.example.json`, legacy `AGENTS.md`, `SOUL.md`, `CRITIC_SOUL.md`, and gateway scripts |
 | [`benchmarks/task-cli/`](benchmarks/task-cli/README.md) | **Gen 5 Flagship CLI Benchmark** | Zero-dependency Python CLI built autonomously on OpenCode V2 + [`DESIGN.md`](benchmarks/task-cli/DESIGN.md) + [`SESSION_TRACE.md`](benchmarks/task-cli/SESSION_TRACE.md) |
@@ -127,9 +128,12 @@ python -m taskcli --help
   - [4.3 Engineering Anti-Fragility: Circuit Breakers, Polyglot AST, & Cognitive Model Tiering](#43-engineering-anti-fragility-circuit-breakers-polyglot-ast--cognitive-model-tiering)
 - [5. Two Practical Turning Points: LangClaw & Vertical Slicing](#5-two-practical-turning-points-langclaw--vertical-slicing)
 - [6. Canary Calibration & Cross-Generational Notes](#6-canary-calibration--cross-generational-notes)
-- [7. Generation 5: Migrating My Workflow to OpenCode V2 (v2.2.x)](#7-generation-5-migrating-my-workflow-to-opencode-v2-v22x)
+- [7. Generation 5: Migrating My Workflow to OpenCode V2 (v2.4.x)](#7-generation-5-migrating-my-workflow-to-opencode-v2-v24x)
   - [7.5 Preliminary Canary Trace: Autonomous Delivery of `task-cli`](#75-preliminary-canary-trace-autonomous-delivery-of-task-cli)
 - [8. Engineering Subsystems & Future Architectural Roadmap](#8-engineering-subsystems--future-architectural-roadmap)
+  - [8.3 Unified Windows Computer Use & Live Voice via Microsoft UFO + Gemini 3.8 Live (Integrated)](#83-unified-windows-computer-use--live-voice-via-microsoft-ufo--gemini-38-live-integrated)
+  - [8.4 Structured LangGraph Integration on OpenCode V2 (Integrated)](#84-structured-langgraph-integration-on-opencode-v2-integrated)
+  - [8.5 Upcoming Milestones: Distributed Systems & SWE-bench Benchmarking](#85-upcoming-milestones-distributed-systems--swe-bench-benchmarking)
 - [9. Citation & Attribution](#9-citation--attribution)
 
 ---
@@ -479,7 +483,7 @@ While interactive games and WebGL applications may initially appear distinct fro
    - **Phase 3 (Bounded Runtime Smoke Execution):** Bounded simulation of state transitions and logic loops, avoiding heavy infinite harnesses.
 
 3. **Scope Boundary (Canary Microcosms vs. SWE-bench):**  
-   These small canary workloads show what worked cleanly in narrow, self-contained builds without human edits — they are not proof of general performance on large repositories. As noted in [Section 8.4](#84-upcoming-milestones-distributed-systems--swe-bench-benchmarking), formal evaluation on multi-file repositories such as **SWE-bench Verified** remains future work.
+   These small canary workloads show what worked cleanly in narrow, self-contained builds without human edits — they are not proof of general performance on large repositories. As noted in [Section 8.5](#85-upcoming-milestones-distributed-systems--swe-bench-benchmarking), formal evaluation on multi-file repositories such as **SWE-bench Verified** remains future work.
 
 ### 6.2 Cross-Generational Architectural & Operational Benchmark Matrix
 
@@ -562,7 +566,7 @@ The true test of **ŽyrenClaw** occurred during live human playtesting, where na
 
 ---
 
-## 7. Generation 5: Migrating My Workflow to OpenCode V2 (v2.2.x)
+## 7. Generation 5: Migrating My Workflow to OpenCode V2 (v2.4.x)
 
 ### 7.1 The Principle of Harness Agnosticism (Agent = Model + Topology, Independent of Runtime Locks)
 A core philosophical pillar established across the Žyren engineering journey is **Harness Agnosticism**: a production autonomous swarm is defined by its cognitive topology, decomposition discipline, and deterministic quality gates—**not by dogmatic adherence to a single execution harness**. 
@@ -570,7 +574,7 @@ A core philosophical pillar established across the Žyren engineering journey is
   1. *Bespoke Prototype (`Zyren-AI-Dev-Team-I`, 23,050 lines in `src/`)* → Taught me routing and state management, but carried high orchestration maintenance.
   2. *NVIDIA NeMo Chassis & AI Workbench* → Kept local SQLite WAL state lightweight with cloud NIM offload, but lacked a native interactive coding CLI harness.
   3. *OpenClaw Gateway / ŽyrenClaw* → Provided an initial persistent background daemon, but exposed category mismatches and operational fragility.
-  4. *OpenCode V2 (v2.2.7+)* → **The coding harness I migrated to in Generation 5**, purpose-built for interactive software engineering.
+  4. *OpenCode V2 (v2.2.7 → v2.4.x)* → **The coding harness I migrated to in Generation 5**, purpose-built for interactive software engineering.
 * **Abstract Portability:** Because the Žyren 5-Agent Hub-and-Spoke collective is formalized as an abstract architectural contract in `AGENTS.md` (governed by Vertical Feature Slicing, Conway-aligned Full-Stack coding, and Deterministic Runtime Gates), the collective can be seamlessly transplanted into any superior harness substrate without rewriting core business logic.
 
 ### 7.2 Friction Points Encountered Using OpenClaw as a Coding Harness
@@ -579,7 +583,7 @@ While OpenClaw helped me prototype subagent mechanics, extended coding sessions 
 2. **Runtime Fragility & SQLite Lock Contention:** Extended multi-agent runs occasionally ran into dropped connections and SQLite file-lock errors (`SQLITE_BUSY` / `SQLITE_LOCKED`) that interrupted unattended sessions.
 3. **Startup Prompt Bloat via Eager Skill Injection:** Injecting large skill instructions into turn-zero system context bloated baseline prompts across long multi-turn builds.
 
-### 7.3 Why I Migrated My Workflow to OpenCode V2 (v2.2.x)
+### 7.3 Why I Migrated My Workflow to OpenCode V2 (v2.4.x)
 Adopted in November 2026, **OpenCode V2** (by Anomaly / `@thdxr`) addressed those specific daemon and skill-loading bottlenecks in my workflow:
 1. **Purpose-Built Coding Architecture:** OpenCode was designed from first principles strictly for software development. Its core runtime operates as a high-performance background daemon (`opencode serve`) cleanly decoupled from user interfaces (Electron Desktop, terminal TUI, and headless CLI) via the open Agent Client Protocol (ACP).
 2. **Zero-Plumbing Native Desktop Integration:** Completely replaces fragile background Node.js gateway scripts with a standalone desktop client (`OpenCode.exe`) and bundled CLI (`opencode-cli.exe`), launching instantaneously with zero runtime drift.
@@ -602,6 +606,10 @@ The production port was architected as an isolated, modular scaffold inside [`sc
   - `audit.md` (`/audit`): Direct 1-hop invocation to `zyren-critic` for deterministic runtime smoke testing.
   - `plan.md` (`/plan`): Direct 1-hop invocation to `zyren-planner` for Walking Skeleton blueprints.
   - `research.md` (`/research`): Direct 1-hop invocation to `zyren-research` for technical documentation vetting.
+  - `voice.md` (`/voice`): Inspects live Unified UFO daemon state (`ufo_status`), Windows Admin UIPI status, and triggers visual desktop actions directly.
+* **MCP Servers & Progressive Skills (`mcp.servers` + `skills/`):**
+  - `zyren-ufo` (`codemode: false`, `pool: true`): Exposes `16` Windows desktop GUI & vision tools directly on every agent's native tool list alongside [`skills/computer-use/SKILL.md`](scaffolds/opencode/skills/computer-use/SKILL.md).
+  - `langchain-docs` & `langchain-reference` (`oauth: false`, `pool: true`): Connects every agent to live official LangChain/LangGraph documentation alongside [`skills/langgraph/SKILL.md`](scaffolds/opencode/skills/langgraph/SKILL.md).
 
 ### 7.5 Preliminary Canary Trace: Autonomous Delivery of `task-cli`
 On **November 11, 2026**, the Žyren collective on OpenCode V2 was subjected to a rigorous, zero-instruction autonomous software engineering benchmark: designing and implementing a zero-dependency, production-grade Python CLI task manager ([`benchmarks/task-cli/`](benchmarks/task-cli/README.md), documented in [`DESIGN.md`](benchmarks/task-cli/DESIGN.md) and [`SESSION_TRACE.md`](benchmarks/task-cli/SESSION_TRACE.md)):
@@ -612,7 +620,7 @@ On **November 11, 2026**, the Žyren collective on OpenCode V2 was subjected to 
 5. **Phase 5 — Same-Session Remediation & Final Approval:** The defect was routed back to `zyren-coder`'s persistent session, which fixed `README.md` in a single follow-up turn without touching source code files. `zyren-critic` re-audited the patch and issued **`APPROVED` (0 remaining defects)**.
 6. **Milestone Completion:** The coordinator verified the files on disk, confirming all four subcommands (`add`, `list`, `done`, `delete`) ran cleanly with zero circular imports.
 
-* **Benchmark Conclusion — Preliminary Validation Scope (N=1 CLI Package):** While a single 8-file Python CLI does not constitute statistical proof across large enterprise repositories (scheduled for formal Track 2 and **SWE-bench Verified** evaluation in [§8.4](#84-upcoming-milestones-distributed-systems--swe-bench-benchmarking)), the unguided delivery of `task-cli` confirmed zero daemon stalls, zero-orphan persistent session reuse, and clean closed-loop Critic remediation—validating OpenCode V2 as the active production harness for the Žyren collective.
+* **Benchmark Conclusion — Preliminary Validation Scope (N=1 CLI Package):** While a single 8-file Python CLI does not constitute statistical proof across large enterprise repositories (scheduled for formal Track 2 and **SWE-bench Verified** evaluation in [§8.5](#85-upcoming-milestones-distributed-systems--swe-bench-benchmarking)), the unguided delivery of `task-cli` confirmed zero daemon stalls, zero-orphan persistent session reuse, and clean closed-loop Critic remediation—validating OpenCode V2 as the active production harness for the Žyren collective.
 
 ---
 
@@ -652,11 +660,25 @@ Informed by work on role-private multi-agent memory (**DecentMem**, Hao et al., 
   * **Deep Sleep (`memory/dreaming/deep/` & Nocturnal Promotion):** Automatically triggered every night at **03:00 AM** (`DEFAULT_MEMORY_DREAMING_FREQUENCY = "0 3 * * *"`) via the managed cron job `Memory Dreaming Promotion`. Deep Sleep evaluates refined candidates against strict promotion thresholds (`minScore`, `maxPromotedSnippetTokens`), permanently etching verified engineering gotchas into `MEMORY.md` and indexing them into the 3072-dimensional vector substrate (`gemini-embedding-2`).
   * **Zero-Shot Heuristic Inheritance:** When the swarm wakes up and initializes a fresh morning build, the subagents automatically query `memory.search` and inherit these distilled operational rules zero-shot—permanently preventing recurring regressions without human oversight.
 
-### 8.3 Native Windows OS & GUI Automation via Microsoft UFO (Architectural Status & Standby)
-- **Integration Foundation:** The architectural bridge and execution harness (`projects/ufo-automation/` and `live_ufo_bridge.py`) connecting ŽyrenClaw with **Microsoft UFO (UI-Focused Agent)** have been successfully established, enabling Windows UI Automation (UIA) tree parsing and desktop control.
-- **Strategic Standby & Industry Maturation Alignment:** While the communication and orchestration plumbing are fully operational, active deployment of OS-level vision control is currently placed on **tactical architectural standby**. This reflects an intentional engineering decision to await further ecosystem maturity in real-time desktop multimodal spatial grounding models and latency optimizations before exposing full autonomous OS-level mouse and keyboard manipulation to continuous production swarms.
+### 8.3 Unified Windows Computer Use & Live Voice via Microsoft UFO + Gemini 3.8 Live (Integrated)
+What unlocked active production Computer Use on Windows was pairing a local **Microsoft UFO** GUI executor directly with Google's **`gemini-3.8-live`** multimodal voice/vision model inside a conflict-free daemon (`zyren_live_daemon.py`), rather than forcing general coding models to handle raw mouse/keyboard loops alone:
 
-### 8.4 Upcoming Milestones: Distributed Systems & SWE-bench Benchmarking
+- **Why `gemini-3.8-live` Solved the Desktop Bottleneck:** Coding models (`step-5-preview`, `nemotron-3.5-super-vl-120b-a12b`, or the session's selected LLM) focus purely on architecture, multi-file implementation, and deterministic code checks, while **`gemini-3.8-live`** acts as a responsive voice and screen-vision specialist—parsing UI Automation (UIA) Set-of-Mark annotations, visual pixel diffs (`reflect_and_verify`), and live audio instructions concurrently, then reporting structured outcomes back to the software agents.
+- **Singleton Voice + FIFO Mutex + Emergency Safety Gate:**
+  - Enforces **strictly one active `gemini-3.8-live` Live Voice session** (idempotent start guard—never two overlapping voice agents talking over each other).
+  - Serializes all desktop input/capture calls through one shared `DirectDesktopExecutor` protected by a FIFO `asyncio` lock (`desktop_lease_lock`).
+  - Applies a single shared control plane (`audio_muted`, `execution_enabled` emergency pause with 4-phrase Arabic/English voice unlock guard, and `narration_mode`) uniformly across Live Voice and every MCP caller.
+  - When Live Voice is off, `ufo_run_visual_goal` transparently routes multi-step GUI tasks through a headless **`gemini-3.8-flash`** visual loop under the same safety gate.
+- **Direct Tool Access Across All 7 Agents (`zyren-ufo` MCP):** Exposes `16` desktop & visual tools (`ufo_status`, `ufo_capture_desktop_view`, `ufo_list_desktop_windows`, `ufo_select_window`, `ufo_inspect_active_window`, `ufo_click_control`, `ufo_click_coordinates`, `ufo_drag_coordinates`, `ufo_type_text`, `ufo_press_keys`, `ufo_game_control`, `ufo_scroll_window`, `ufo_wait_seconds`, `ufo_reflect_and_verify`, `ufo_run_visual_goal`, `ufo_launch_application`) via a `FastMCP` stdio proxy (`ufo_mcp_proxy.py`) returning both structured UIA JSON and inline `JPEG` frames. Setting **`codemode: false`** and **`pool: true`** alongside [`scaffolds/opencode/skills/computer-use/SKILL.md`](scaffolds/opencode/skills/computer-use/SKILL.md) and MCP `instructions` ensures `build`, `plan`, `zyren-coder`, `zyren-critic`, and all specialists drive and verify UIs directly without bouncing each click through `zyren-dev-team` (`subagent_depth = 1` intact).
+- **OpenCode Desktop GUI Plugin (`zyren-live-voice`):** Built on `@opencode/plugin/gui` (`TitlebarItem`, `session.header` `Slot`, pinned side `Panel`, `Ctrl/Cmd+Shift+V` command, `/voice` slash command) with HTTP calls bridged through Electron Main `IPC` (`ZyrenVoiceIpc.apiCall`) to eliminate renderer CORS/CSP blocks, plus automatic Windows Administrator UIPI inheritance when OpenCode Desktop runs elevated (`elevated: true`).
+- **Verification Scope:** Validated locally via `34` Python `unittest` unit and integration checks (`test_live_direct_bridge.py` and `test_zyren_live_daemon.py`), real stdio `zyren-ufo` MCP capture/tool calls, and live OpenCode `v2.4.1` plugin/MCP/agent endpoint queries.
+
+### 8.4 Structured LangGraph Integration on OpenCode V2 (Integrated)
+To ensure all OpenCode agents scaffold and refactor stateful multi-agent Python/TypeScript workflows cleanly against current APIs without bloating turn-zero prompts:
+- **Live Official MCP Grounding:** Added pooled remote MCP endpoints (`oauth: false`, `pool: true`) for **`langchain-docs`** (`https://docs.langchain.com/mcp`) and **`langchain-reference`** (`https://reference.langchain.com/mcp`) in `opencode.example.jsonc`, verified connected on OpenCode `v2.4.1`.
+- **Progressive `LangGraph` Skill ([`scaffolds/opencode/skills/langgraph/SKILL.md`](scaffolds/opencode/skills/langgraph/SKILL.md)):** Instructs agents to check live documentation first, model explicit `TypedDict`/`BaseModel` state with `Annotated` reducers, route cleanly with `StateGraph`, `Command`, and parallel `Send`, enforce thread checkpointers (`InMemorySaver`, `SqliteSaver`, `PostgresSaver`), `interrupt()` HITL pauses, cross-thread `BaseStore` memory, `stream_mode`, `langchain-mcp-adapters`, and `langgraph.json` deployment.
+
+### 8.5 Upcoming Milestones: Distributed Systems & SWE-bench Benchmarking
 1. **Escalation to High-Complexity Multi-Service Architectures (Track 2):**
    - Having empirically validated the vertical topology on canary workloads, the swarm will be tasked with end-to-end scaffolding and maintenance of decoupled full-stack systems: an asynchronous FastAPI backend with PostgreSQL and Redis caching, paired with a modern React/TypeScript frontend with real-time WebSockets.
 2. **SWE-bench Verified / Lite Formal Evaluation:**

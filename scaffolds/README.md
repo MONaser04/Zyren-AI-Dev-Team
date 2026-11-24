@@ -9,10 +9,11 @@ This directory contains the production configuration schemas, operational prompt
 ```text
 scaffolds/
 ├── opencode/                       # 👑 Generation 5: OpenCode V2 Production Runtime (Active)
-│   ├── opencode.example.jsonc      # Complete OpenCode V2 configuration schema
-│   ├── AGENTS.md                   # OpenCode V2 operational mandates & persistent session protocol
+│   ├── opencode.example.jsonc      # Complete OpenCode V2 configuration schema (agents + MCPs)
+│   ├── AGENTS.md                   # OpenCode V2 operational mandates, Computer Use & LangGraph rules
 │   ├── zyren-sessions.example.md   # Persistent session registry template
-│   ├── commands/                   # Direct fast-path commands (/build, /audit, /plan, /research)
+│   ├── commands/                   # Direct fast-path commands (/build, /audit, /plan, /research, /voice)
+│   ├── skills/                     # Progressive-disclosure skills (computer-use, langgraph)
 │   └── README.md                   # Deployment and usage guide
 │
 ├── tools/                          # 💎 Code Intelligence Engine (Cross-Platform Python CLI)
