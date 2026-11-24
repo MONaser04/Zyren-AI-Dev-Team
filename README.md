@@ -19,9 +19,9 @@
 * **Verified Reference Repositories & Execution Environments:**
   1. **Generation 1 (17+3 Agent Star-Topology SDLC Engine):** [MONaser04/Zyren-AI-Dev-Team-I](https://github.com/MONaser04/Zyren-AI-Dev-Team-I)
   2. **Generation 2A (Domain-Agnostic NVIDIA NeMo Execution Chassis):** [MONaser04/Zyren-NeMo-Chassis](https://github.com/MONaser04/Zyren-NeMo-Chassis)
-  3. **Generation 2B (Dual-Brain Multimodal Liaison & Switchyard Router):** [MONaser04/Zyren-AI-Dev-Team](https://github.com/MONaser04/Zyren-AI-Dev-Team)
-  4. **Generation 3 & 4 (Production Autonomous Engineering Runtime):** **ŽyrenClaw** (Decoupled OpenClaw Architecture + **LangClaw** `v0.4.0` Sidecar Prototype + 5-Agent Vertical Topology) — *Scaffold: [MONaser04/ZyrenClaw](https://github.com/MONaser04/ZyrenClaw)*
-  5. **Generation 5 (Coding Harness Migration — OpenCode V2):** **Žyren on OpenCode V2** (Decoupled TypeScript Engine + Electron Desktop Harness + Native Agent Skills Specification + Isolated 5-Agent Hub-and-Spoke Topology in `scaffolds/opencode/`) — *Replacing custom Node daemon plumbing with native background service execution, progressive skill disclosure, and a preliminary end-to-end Python CLI canary (`task-cli`).*
+  3. **Generation 2B (Dual-Brain Multimodal Liaison & Switchyard Router):** [MONaser04/Zyren-AI-Dev-Team-II](https://github.com/MONaser04/Zyren-AI-Dev-Team-II)
+  4. **Generation 3 & 4 (Production Autonomous Engineering Runtime):** **ŽyrenClaw** (Decoupled OpenClaw Architecture + **LangClaw** `v0.4.0` Sidecar Prototype + 5-Agent Vertical Topology) — *Archived Scaffold: [`scaffolds/openclaw/`](scaffolds/openclaw/README.md) in this repo*
+  5. **Generation 5 (Coding Harness Migration — OpenCode V2):** **Žyren on OpenCode V2** ([MONaser04/Zyren-AI-Dev-Team](https://github.com/MONaser04/Zyren-AI-Dev-Team) — Decoupled TypeScript Engine + Electron Desktop Harness + Native Agent Skills Specification + Isolated 5-Agent Hub-and-Spoke Topology in `scaffolds/opencode/`) — *Replacing custom Node daemon plumbing with native background service execution, progressive skill disclosure, and a preliminary end-to-end Python CLI canary (`task-cli`).*
 
 > [!NOTE]
 > **Scope & Methodological Note (Personal Field Notes — Not Universal Laws):**  
@@ -35,7 +35,7 @@ A widespread assumption in agentic system design is that increasing the number o
 
 This case study documents my personal engineering notes across five iterative setups built under the **Žyren** brand:
 1. **Generation 1 (`Zyren-AI-Dev-Team-I`):** A Python monorepo (`23,050` lines across `100` files in `src/`, `19,373` non-empty lines) featuring **17 specialized SDLC agent roles** (+ 3 operational agents), a **LangGraph Supervisor Star Topology**, a **6-Domain Semantic Router**, **SmartGateway** with **Bayesian Thompson Sampling** across **10 LLM provider adapters**, and **29 offline test suites**.
-2. **Generation 2 (`Zyren-NeMo-Chassis` & `Zyren-AI-Dev-Team`):** A modular infrastructure chassis built for the **NVIDIA NeMo / NIM ecosystem** and **NVIDIA AI Workbench** using lightweight local SQLite WAL state with inference offloaded to cloud NVIDIA NIM endpoints, paired with a **Dual-Brain Liaison Agent** combining a **Google Gemini Live API Voice Facade** (`gemini-3.1-flash-live-preview`) with an **NVIDIA Nemotron Reasoning Core** (`nvidia/nemotron-3-ultra-550b-a55b`).
+2. **Generation 2 (`Zyren-NeMo-Chassis` & `Zyren-AI-Dev-Team-II`):** A modular infrastructure chassis built for the **NVIDIA NeMo / NIM ecosystem** and **NVIDIA AI Workbench** using lightweight local SQLite WAL state with inference offloaded to cloud NVIDIA NIM endpoints, paired with a **Dual-Brain Liaison Agent** combining a **Google Gemini Live API Voice Facade** (`gemini-3.1-flash-live-preview`) with an **NVIDIA Nemotron Reasoning Core** (`nvidia/nemotron-3-ultra-550b-a55b`).
 3. **Generation 3 & 4 (`ŽyrenClaw`):** A return to **OpenClaw**, customized at the CLI and UI layers into **ŽyrenClaw** without forking upstream OpenClaw's core runtime, paired with the **LangClaw** state/memory prototype, and simplified into a **5-agent Hub-and-Spoke setup** organized around **Vertical Feature Slicing (Walking Skeletons)** and an **execution-based Critic gate**.
 4. **Generation 5 (`OpenCode V2`):** A migration from general automation gateways to **OpenCode V2 (v2.2.7)** as a dedicated software engineering harness—eliminating custom daemon scripts and SQLite lock contention, using the **Agent Skills standard (`SKILL.md`)** with progressive disclosure, and completing an initial end-to-end Python CLI canary (`task-cli`, N=1) prior to future SWE-bench testing.
 
@@ -50,8 +50,8 @@ This case study documents my personal engineering notes across five iterative se
 | Phase / Era | Core Architecture & Scale | Key Innovation & Tech Stack | Crucial Lesson / Failure Mode Overcome | Production Artifacts & Status |
 | :--- | :--- | :--- | :--- | :--- |
 | 🏛️ **Gen 1: Bespoke SDLC Prototype** | **20 Agent Roles** (17 SDLC + 3 Ops) in a LangGraph Star Topology | • Built from scratch (**23,050 lines across 100 Python files in `src/`**)<br>• Custom SmartGateway with Thompson Sampling<br>• 29 offline test suites | ❌ **Coordination Tax & Context Drift:** Passing context across 17 specialist boundaries led to cumulative context drift and heavy multi-hop token overhead. | 📦 **Status:** [Zyren-AI-Dev-Team-I](https://github.com/MONaser04/Zyren-AI-Dev-Team-I)<br>*(📦 Archived)* |
-| 🧠 **Gen 2: NVIDIA NeMo & Dual-Brain** | **Consolidated 2-Tier Hierarchy** (SQLite WAL local state + cloud NIM offload) | • Native **NVIDIA NIM & AI Workbench** integration<br>• Dual-Brain: Gemini Live Voice Facade + Nemotron 550B Ultra Reasoning | ⚠️ **Plumbing vs. Runtime:** Validated voice streaming and dual-tier routing, but lacked a native interactive coding CLI harness. | 📦 **Status:** [Zyren-NeMo-Chassis](https://github.com/MONaser04/Zyren-NeMo-Chassis) & [Zyren-AI-Dev-Team](https://github.com/MONaser04/Zyren-AI-Dev-Team)<br>*(📦 Archived)* |
-| ⚙️ **Gen 3: Forging ŽyrenClaw** | **Decoupled Upstream Wrapper (Zero-Fork Runtime)** + **LangClaw** State Sidecar | • Decoupled UI & CLI branding (`zyrenclaw.ps1`)<br>• **Upstream updates preserved (no core fork)**<br>• SQLite episodic vector memory prototype | ❌ **Horizontal Layer Trap:** Splitting frontend, backend, and storage across separate agents caused DOM ID and contract mismatches. | 🔄 **Status:** [MONaser04/ZyrenClaw](https://github.com/MONaser04/ZyrenClaw)<br>*(📦 Archived Gen 3/4 Baseline — `scaffolds/openclaw/openclaw.example.json`)* |
+| 🧠 **Gen 2: NVIDIA NeMo & Dual-Brain** | **Consolidated 2-Tier Hierarchy** (SQLite WAL local state + cloud NIM offload) | • Native **NVIDIA NIM & AI Workbench** integration<br>• Dual-Brain: Gemini Live Voice Facade + Nemotron 550B Ultra Reasoning | ⚠️ **Plumbing vs. Runtime:** Validated voice streaming and dual-tier routing, but lacked a native interactive coding CLI harness. | 📦 **Status:** [Zyren-NeMo-Chassis](https://github.com/MONaser04/Zyren-NeMo-Chassis) & [Zyren-AI-Dev-Team-II](https://github.com/MONaser04/Zyren-AI-Dev-Team-II)<br>*(📦 Archived)* |
+| ⚙️ **Gen 3: Forging ŽyrenClaw** | **Decoupled Upstream Wrapper (Zero-Fork Runtime)** + **LangClaw** State Sidecar | • Decoupled UI & CLI branding (`zyrenclaw.ps1`)<br>• **Upstream updates preserved (no core fork)**<br>• SQLite episodic vector memory prototype | ❌ **Horizontal Layer Trap:** Splitting frontend, backend, and storage across separate agents caused DOM ID and contract mismatches. | 🔄 **Status:** [MONaser04/Zyren-AI-Dev-Team](https://github.com/MONaser04/Zyren-AI-Dev-Team)<br>*(📦 Archived Gen 3/4 Baseline — `scaffolds/openclaw/openclaw.example.json`)* |
 | 🚀 **Gen 4: Lean 5-Agent Topology** | **Strict Hub-and-Spoke** (Coordinator, Researcher, Planner, Coder, Critic) | • **Vertical Feature Slicing (Walking Skeletons)**<br>• **Deterministic Runtime Smoke Gate (`exec`)**<br>• Unified Full-Stack Coder | ✅ **Fewer Merge Breaks:** 3 self-contained canary deliveries (`modern-fruit-catcher`, `cat-playground`, `neon-void`) completed via closed-loop Critic self-repair. | 🎯 **Status:** `benchmarks/` (`modern-fruit-catcher/`, `cat-playground/`, `neon-void/`)<br>*(✅ Canary Verified)* |
 | 👑 **Gen 5: OpenCode V2 Migration** | **OpenCode V2 (v2.2.7) 5-Agent Port** (`scaffolds/opencode/`) | • Native TypeScript background service (`opencode serve`) + Desktop/TUI<br>• First-Class **Agent Skills Standard** (`SKILL.md`) with Progressive Disclosure<br>• Persistent Session Protocol (`zyren-sessions.md`) | ✅ **Fewer Daemon Drops:** Replaced custom Node.js gateway wrappers, SQLite lock contention, and startup prompt bloat in OpenClaw, verified via an initial CLI canary (`task-cli`, N=1). | 🚀 **Status:** [`scaffolds/opencode/`](scaffolds/opencode/README.md) & [`benchmarks/task-cli/`](benchmarks/task-cli/README.md)<br>*(✅ Active Setup — Preliminary Canary Validated)* |
 | ⚡ **Gen 4 Stress Experiment: Multi-Hour Endurance Run** | **Long-Horizon Build** (`grand-project`) | • **Elevated Session Timeout** (`timeoutSeconds: 36000`)<br>• **State-Anchored Protocol** (`PROGRESS.md` on disk against Compaction Cliff)<br>• Host memory caps configured via `.wslconfig` | ⚠️ **Exposed Daemon Contention:** Extended local runs tested disk-anchored `PROGRESS.md` persistence while surfacing OpenClaw daemon fragility that motivated moving to OpenCode V2. | 📦 **Status:** Local stress experiment (not bundled in repo)<br>*(📦 Archived Gen 4 Experiment)* |
@@ -233,7 +233,7 @@ Building `Zyren-AI-Dev-Team-I` from scratch gave me hands-on experience with eve
 ### 2.1 Embracing NVIDIA NIM Blueprints & AI Workbench
 Driven by a deep technical affinity for NVIDIA's AI ecosystem—and a commitment to iteratively rebuild from the ground up whenever a cleaner architecture emerges—the next phase focused on leveraging official NVIDIA libraries, NIM inference blueprints, **NVIDIA AI Workbench**, and **Docker Desktop** to construct a streamlined, enterprise-grade foundation optimized for **NVIDIA NIM Endpoints**.
 
-This phase was split into two repositories: first building a reusable, domain-agnostic execution chassis (**`Zyren-NeMo-Chassis`**), and then building the multi-agent software team on top of it (**`Zyren-AI-Dev-Team`**).
+This phase was split into two repositories: first building a reusable, domain-agnostic execution chassis (**`Zyren-NeMo-Chassis`**), and then building the multi-agent software team on top of it (**`Zyren-AI-Dev-Team-II`**).
 
 ### 2.2 Generation 2A: `Zyren-NeMo-Chassis` (The Domain-Agnostic Plumbing)
 * **Repository:** [MONaser04/Zyren-NeMo-Chassis](https://github.com/MONaser04/Zyren-NeMo-Chassis)
@@ -247,11 +247,11 @@ This phase was split into two repositories: first building a reusable, domain-ag
   6. **Tri-Protocol Observability (`src/observability/`):** Simultaneous export to **ATOF** (`events.jsonl`), **ATIF v1.7 trajectories** (`ATIFTrajectorySubscriber`), and **OpenTelemetry** (`OpenTelemetryExporter`).
   7. **NVIDIA AI Workbench Native Spec (`.project/spec.yaml`):** Built on `nvcr.io/nvidia/ai-workbench/python-basic:1.0.9` with automated `preBuild.bash`, `postBuild.bash`, and `onStart.bash` container lifecycle hooks.
 
-### 2.3 Generation 2B: `Zyren-AI-Dev-Team` & The Dual-Brain Liaison Architecture
-* **Repository:** [MONaser04/Zyren-AI-Dev-Team](https://github.com/MONaser04/Zyren-AI-Dev-Team)
+### 2.3 Generation 2B: `Zyren-AI-Dev-Team-II` & The Dual-Brain Liaison Architecture
+* **Repository:** [MONaser04/Zyren-AI-Dev-Team-II](https://github.com/MONaser04/Zyren-AI-Dev-Team-II)
 * **Consolidation Target (17 Agents → 6 Agents):** Motivated by scaling results such as Kim et al. (Google Research / DeepMind / MIT, `arXiv:2512.08296`, *Towards a Science of Scaling Agent Systems*) — which reported `-39.0%` to `-70.0%` degradation across multi-agent systems on sequential planning (`PlanCraft`) and `17.2×` error amplification in independent topologies vs. `4.4×` under centralized coordination — I began consolidating toward **6 core agents** instead of 17.
-* **What Was Engineered in `Zyren-AI-Dev-Team` Before the OpenClaw Pivot:**
-  Built directly atop the `Zyren-NeMo-Chassis`, development of `Zyren-AI-Dev-Team` began by engineering the centerpiece human-swarm coordinator: the **Dual-Model Liaison Agent (`src/agents/liaison/`)** and the **Switchyard Model Router (`src/routing/router.py`)**:
+* **What Was Engineered in `Zyren-AI-Dev-Team-II` Before the OpenClaw Pivot:**
+  Built directly atop the `Zyren-NeMo-Chassis`, development of `Zyren-AI-Dev-Team-II` began by engineering the centerpiece human-swarm coordinator: the **Dual-Model Liaison Agent (`src/agents/liaison/`)** and the **Switchyard Model Router (`src/routing/router.py`)**:
   1. **Brain 1 — The Real-Time Voice & Multimodal Facade (`src/agents/liaison/voice/facade.py`):**
      - Powered by **Google Gemini Live API** (`model: "gemini-3.1-flash-live-preview"`, voice `"Zephyr"`).
      - Full asynchronous audio/video streaming pipeline (`audio_pipeline.py` at 16kHz PCM input / 24kHz output, `video_pipeline.py` at 1 FPS JPEG screen/camera streaming, `transcription.py`, and `SessionResumptionManager` automatically seamlessly resuming sessions at the 840s/900s boundary).
@@ -268,7 +268,7 @@ This phase was split into two repositories: first building a reusable, domain-ag
 ## 3. Generation 3: Evaluating NemoClaw & Forging ŽyrenClaw
 
 ### 3.1 The NemoClaw Evaluation & Strategic Pivot Back to OpenClaw
-While in the early stages of expanding `Zyren-AI-Dev-Team` toward its 6-agent target, parallel research was conducted into **OpenClaw's** evolving capabilities—specifically triggered by NVIDIA's research and release of **NemoClaw** (which wraps OpenClaw inside isolated **NVIDIA OpenShell** containers with security guardrails and policy enforcement).
+While in the early stages of expanding `Zyren-AI-Dev-Team-II` toward its 6-agent target, parallel research was conducted into **OpenClaw's** evolving capabilities—specifically triggered by NVIDIA's research and release of **NemoClaw** (which wraps OpenClaw inside isolated **NVIDIA OpenShell** containers with security guardrails and policy enforcement).
 
 * **Hardware Reality Check:** Evaluating NemoClaw revealed that running its full isolated container/micro-VM stack required local compute and memory resources beyond the workstation's 16GB RAM envelope.
 * **The Pivot:** Rather than forcing an overweight container stack onto constrained hardware, the decision was made to return to native **OpenClaw** (continuously maintained in sync with official upstream releases) and bring **Antigravity** (using Google **Gemini 3.6 / 3.7 / 3.8 Flash** and Claude models) directly into the workflow to re-architect the local OpenClaw environment into a rock-solid autonomous system.
@@ -677,10 +677,10 @@ If you reference the Žyren architecture, empirical findings, or benchmark metho
   year = {2026},
   publisher = {GitHub},
   journal = {GitHub repository},
-  howpublished = {\url{https://github.com/MONaser04/ZyrenClaw}}
+  howpublished = {\url{https://github.com/MONaser04/Zyren-AI-Dev-Team}}
 }
 ```
 
 ---
 
-*Verified against live source repositories (`Zyren-AI-Dev-Team-I`, `Zyren-NeMo-Chassis`, `Zyren-AI-Dev-Team`, `ZyrenClaw`), in-repo scaffolds (`scaffolds/opencode/`, `scaffolds/tools/`, `scaffolds/openclaw/`), the Gen 5 CLI package (`benchmarks/task-cli/`), and documented benchmark artifacts (`benchmarks/`) — November 2026.*
+*Verified against live source repositories (`Zyren-AI-Dev-Team-I`, `Zyren-NeMo-Chassis`, `Zyren-AI-Dev-Team-II`, `Zyren-AI-Dev-Team`), in-repo scaffolds (`scaffolds/opencode/`, `scaffolds/tools/`, `scaffolds/openclaw/`), the Gen 5 CLI package (`benchmarks/task-cli/`), and documented benchmark artifacts (`benchmarks/`) — November 2026.*
