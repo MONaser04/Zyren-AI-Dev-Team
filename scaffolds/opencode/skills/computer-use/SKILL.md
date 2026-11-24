@@ -1,6 +1,6 @@
 ---
 name: Computer Use
-description: Native Windows desktop Computer Use via zyren-ufo (Microsoft UFO + Gemini 3.8 Live / Flash). Use whenever the user asks for computer use, التحكم في الشاشة, clicking Windows taskbar/desktop/toolbar icons, launching or driving native Windows apps and games, or visually verifying desktop GUIs — instead of the in-app browser skill.
+description: Native Windows desktop Computer Use via zyren-ufo (Microsoft UFO + Gemini 3.8 Live). Use whenever the user asks for computer use, التحكم في الشاشة, clicking Windows taskbar/desktop/toolbar icons, launching or driving native Windows apps and games, or visually verifying desktop GUIs — instead of the in-app browser skill.
 ---
 
 # Native Windows Computer Use (`zyren-ufo`)
@@ -32,11 +32,11 @@ Use the `zyren-ufo` MCP tools whenever the user asks to control the computer scr
 4. Verify the real screen outcome:
    - `ufo_reflect_and_verify(expected_state="...", include_desktop=True)`
 
-## Autonomous Multi-Step Visual Execution
+## Delegating to Live Voice vs Direct Atomic Control
 
 - `ufo_run_visual_goal(goal="...", max_steps=15, timeout_seconds=120)`:
-  - When **Live Voice (`gemini-3.8-live`) is ON**, automatically routes the visual goal into that active singleton Live Voice + Vision session so there is never a second conflicting model.
-  - When **Live Voice is OFF**, executes autonomously via headless `gemini-3.8-flash` vision+action loop under the shared desktop mutex and returns the summary + latest screenshot.
+  - When **Live Voice (`gemini-3.8-live`) is ON**, routes the visual goal into that active singleton Live Voice + Vision session so there is never a second conflicting model.
+  - When **Live Voice is OFF**, returns a fresh annotated desktop screenshot (`status: "voice_inactive"`, `mode: "direct_mcp_required"`) so you execute the steps directly using the atomic `ufo_*` tools without invoking any other hidden model.
 
 ## Safety Gate
 

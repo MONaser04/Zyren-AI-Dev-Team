@@ -52,7 +52,7 @@ To isolate the collective strictly to a specific repository:
    - The coordinator (`zyren-dev-team`) defaults to `nvidia/stepfun-ai/step-5-preview`.
    - The three specialists (`zyren-research`, `zyren-planner`, `zyren-coder`) carry **no pinned model** and dynamically inherit whatever model you select in the session/app.
    - The critic (`zyren-critic`) is **hard-pinned** to `nvidia/nvidia/nemotron-3.5-super-vl-120b-a12b` for mandatory cross-model cognitive diversity.
-   - Real-time desktop Voice + Vision control is paired through a singleton **`gemini-3.8-live`** bridge (`zyren-ufo` with `codemode: false` and headless `gemini-3.8-flash` fallback when Voice is off), giving every specialist direct desktop verification under a single FIFO mutex and emergency safety gate without dual-audio conflicts.
+   - Real-time desktop Voice + Vision control is paired through a singleton **`gemini-3.8-live`** bridge (`zyren-ufo` with `codemode: false`; when Live Voice is off, agents drive the atomic `ufo_*` tools directly), giving every specialist direct desktop verification under a single FIFO mutex and emergency safety gate without dual-audio conflicts.
 3. **Persistent Session Protocol (`zyren-sessions.md`):**
    One agent = one persistent session for the lifetime of the project. The coordinator reads the registry before every dispatch and passes the registered `sessionID` to preserve working context and eliminate orphaned sessions.
 4. **Mandatory Deterministic Critic Gate:**
