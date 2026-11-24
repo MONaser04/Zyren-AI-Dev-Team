@@ -1,6 +1,6 @@
 # Žyren Autonomous Engineering Collective — OpenCode V2 Scaffolds
 
-This directory contains the production-grade deployment scaffolds for running the **Žyren 5-Agent Collective**, **Unified Microsoft UFO Computer Use (`gemini-3.8-live`)**, and **Structured LangGraph Tooling** inside **OpenCode V2 (v2.4+)**.
+This directory contains the production-grade deployment scaffolds for running the **Žyren 5-Agent Collective**, **Live Voice Chat & Unified Microsoft UFO Computer Use (`gemini-3.8-live`)**, and **Structured LangGraph Tooling** inside **OpenCode V2 (v2.4+)**.
 
 ## Directory Layout
 
@@ -52,7 +52,7 @@ To isolate the collective strictly to a specific repository:
    - The coordinator (`zyren-dev-team`) defaults to `nvidia/stepfun-ai/step-5-preview`.
    - The three specialists (`zyren-research`, `zyren-planner`, `zyren-coder`) carry **no pinned model** and dynamically inherit whatever model you select in the session/app.
    - The critic (`zyren-critic`) is **hard-pinned** to `nvidia/nvidia/nemotron-3.5-super-vl-120b-a12b` for mandatory cross-model cognitive diversity.
-   - Real-time desktop Voice + Vision control is paired through a singleton **`gemini-3.8-live`** bridge (`zyren-ufo` with `codemode: false`; when Live Voice is off, agents drive the atomic `ufo_*` tools directly), giving every specialist direct desktop verification under a single FIFO mutex and emergency safety gate without dual-audio conflicts.
+   - Real-time bidirectional **Live Voice Chat** and desktop vision control are paired through a singleton **`gemini-3.8-live`** daemon (`zyren-ufo` MCP with `codemode: false` + `opencode_bridge.py` REST/SSE integration). Inside OpenCode Desktop (`Live Voice` button, `Ctrl/Cmd+Shift+V`, or `/voice`), `gemini-3.8-live` converses live with the user, dispatches non-blocking prompts (`opencode_send_prompt`), speaks `SSE` completions & permission prompts aloud (`opencode_reply_permission`), interrupts runs (`opencode_interrupt`) across all `7` agents, and gives every specialist direct desktop verification under one FIFO mutex and emergency safety gate without dual-audio conflicts (when voice is off, agents drive atomic `ufo_*` tools directly).
 3. **Persistent Session Protocol (`zyren-sessions.md`):**
    One agent = one persistent session for the lifetime of the project. The coordinator reads the registry before every dispatch and passes the registered `sessionID` to preserve working context and eliminate orphaned sessions.
 4. **Mandatory Deterministic Critic Gate:**
